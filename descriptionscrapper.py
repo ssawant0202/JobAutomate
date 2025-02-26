@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
+from webdriver_manager.chrome import ChromeDriverManager
 
 import time, os
 from bs4 import BeautifulSoup
@@ -13,7 +14,7 @@ import re
 #google email: jobautomate@jobautomate.iam.gserviceaccount.com
 # Path to ChromeDriver (Update as needed)
 def generate_description_files():
-    chrome_driver_path = "/opt/homebrew/bin/chromedriver"  # Update this if necessary
+    chrome_driver_path = ChromeDriverManager().install()#"/opt/homebrew/bin/chromedriver"  # Update this if necessary
     service = Service(chrome_driver_path)
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Run Chrome in the background
