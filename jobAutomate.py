@@ -1,11 +1,17 @@
 import descriptionscrapper
 import openAItest
-import os
-import time
+import os, time ,sys
 def get_latex_code():
     # Define the parent directory
-    parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
-    resume_dir = "/Users/siddheshsawant/Documents/JobApplications"
+    if sys.platform == "darwin":
+        parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
+        resume_dir = "/Users/siddheshsawant/Documents/JobApplications"
+    elif sys.platform == "win32":
+        parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path
+        resume_dir = r"E:\Applications 2024"
+    else:
+        raise RuntimeError("Unsupported OS")
+    
     #Get Resume
     if os.path.isdir(resume_dir):  # Ensure it's a directory
             job_resume_path = os.path.join(resume_dir, "my_resume.txt")  # Path to job description
@@ -39,9 +45,9 @@ def get_latex_code():
 
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
-    descriptionscrapper.generate_description_files()
+    # descriptionscrapper.generate_description_files()
     print("-----✅All descriptions Generated!-----")
-    #get_latex_code()
+    get_latex_code()
     print("-----✅ All Resumes Code Generated!-----")
 
 

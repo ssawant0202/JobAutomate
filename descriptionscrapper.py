@@ -8,7 +8,7 @@ from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 from webdriver_manager.chrome import ChromeDriverManager
 
-import time, os
+import time, os, sys
 from bs4 import BeautifulSoup
 import re
 #google email: jobautomate@jobautomate.iam.gserviceaccount.com
@@ -35,7 +35,13 @@ def generate_description_files():
     credentials = Credentials.from_service_account_file('credentials.json', scopes = scope)
     service = build('sheets', 'v4', credentials=credentials)
     sheet = service.spreadsheets()
-    parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"  # Change to your desired path
+    if sys.platform == "darwin":
+        parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"  # Change to your desired path
+    elif sys.platform == "win32":
+        parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path
+    else:
+        raise RuntimeError("Unsupported OS")
+
     # List of folders to create
     # folders = ["Project1", "Project2"]
     sheet_read = sheet.values().get(spreadsheetId = sheet_id, range = 'A2:B8').execute()
