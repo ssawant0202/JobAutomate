@@ -1,8 +1,14 @@
 def get_prompt(job_description: str, my_resume: str) -> str:
     
     prompt = f"""
+Run These two prompts in sequence: 
+Prompt 1) 
 You are an expert resume writer with over 20 years of experience helping job seekers land software engineering/developer roles.
-Analyze the job Description provided below to find max 5 crucial technical words (exclude soft skills like colloboration, team player). Make sure to integrate these words in my current resume.
+Analyze the job Description provided below to find max 5 crucial tech stack words (exclude soft skills like colloboration, team player and action verbs). Make sure to integrate these words in my current resume.
+**Job Description:**
+{job_description}
+
+Prompt 2)
 Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
 Each bullet point should:
 - Use a STAR approach (Situation, Task, Action, Result).
@@ -11,9 +17,9 @@ Each bullet point should:
 - Use compelling action verbs and quantify results where possible.
 - Align with the responsibilities outlined in the job description.
 Each bullet point should use a STAR-style structure, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (min 75 words)
-Add the important softwares and tech stacks used in the job description while maintaning the authenticity of my resume. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
+Integrate the 5 words from above in the job description. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
 Focus on the company's values and integrate it with my resume for action verbs or just in general
-Just the Latex code nothing else because Im using the ouput to compile the code into a pdf.
+Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 
 
 
 ------------------------------------------------------------
@@ -60,18 +66,22 @@ Specialty & Automated testing, Data structures, Software architecture, Unit test
 New/Mode \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
     \\itemsep -3pt {{}}
-    \\item Led a team of 2 to automate \\textbf{{CI/CD workflows}} integrated with \\textbf{{Git}} and \\textbf{{Docker}}, catching \\textbf{{20\\% more errors}} pre-deployment and saving \\textbf{{10+ hours weekly}}
-    \\item Improved regression testing by writing \\textbf{{Unit Tests}} in \\textbf{{Cypress}}, optimizing \\textbf{{deployment time from 2 days to 4 hours}}.
-    \\item Designed \\textbf{{scalable and distributed systems}} using \\textbf{{Docker}} and \\textbf{{Kubernetes}}, improving infrastructure efficiency.
+    \\item Integrate the new Bullet point 0 with original : "Led a team of 2 to create and automate CI/CD workflows integrated with Git and Docker, catching 20more
+    errors pre-deployment and saving 10+ hours weekly in debugging time, ensuring seamless distributed system
+    reliability with low cost solutions"
+
+    \\item Bullet point 1 
+    \\item Bullet point 2
+
 \\end{{itemize}}
 
 \\textbf{{Software Development Intern}} \\hfill Jan 2021 - Jan 2021\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
-    \\item Collaborated with \\textbf{{data scientists}} to innovate \\textbf{{data segmentation techniques}} on \\textbf{{CT, MRI, and retina scans}}, increasing model accuracy by \\textbf{{10\\%}}.
-    \\item Engaged in \\textbf{{team collaboration}} during Agile meetings to refine \\textbf{{user requirements}}, ensuring high-quality software delivery.
-    \\item Researched distributed algorithms and implemented findings, \\textbf{{leading a team of 3}} to improve model accuracy by \\textbf{{15\\%}}.
-\\end{{itemize}}
+    \\item Integrate the new Bullet point 3 with original : "Collaborated with data scientists to innovate data segmentation techniques on CT, MRI, and retina
+    scans enhancing machine learning model accuracy by 10\% through efficient data processing pipelines"
+    \\item Bullet point 4
+    \\item Bullet point 5
 
 \\end{{rSection}}
 
@@ -96,12 +106,18 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\end{{itemize}}
 \\end{{rSection}}
 
+\\begin{{rSection}}{{Five Most Important Keywords from the job description}}
+\\begin{{itemize}}
+   \\item Keyword1, Keyword1, Keyword1, Keyword1 
+\\end{{itemize}}
+\\end{{rSection}}
 \\end{{document}}
 
 
 ### OUTPUT FORMAT ###
 Use The exact same  LaTeX format resume just update the \\items (bullet points) nothing else so that the over structure remains the same.
 please do not add '```latex' above \\documentclass{{resume}} and '```' below \\end{{document}}
+if there is & or % sign in bullet points make sure to add backslash before it ex R\\&D
 
 Now, generate the bullet points in LaTeX format based on the above job description and resume experience.
 """
