@@ -106,6 +106,12 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\end{{itemize}}
 \\end{{rSection}}
 
+\\begin{{rSection}}{{Interests}}
+\\begin{{itemize}}
+   \\item In my free time I like to play \\textbf{{chess}} and paint \\textbf{{acrylic portraits}}. I've won a couple of trophies in \\textbf{{table tennis}}.
+\\end{{itemize}}
+\\end{{rSection}}
+
 \\begin{{rSection}}{{Five Most Important Keywords from the job description}}
 \\begin{{itemize}}
    \\item Keyword1, Keyword1, Keyword1, Keyword1 
