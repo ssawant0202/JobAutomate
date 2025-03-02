@@ -32,7 +32,7 @@ Just the Latex code nothing else because Im using the ouput to compile the code 
 
 \\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{{geometry}}
 \\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
-\\\\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
+\\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
 \\name{{Siddhesh Sawant}}
 \\address{{+1(236) 867-1693 \\\\ Coquitlam, BC}}
 \\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}}\\\\ 
