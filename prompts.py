@@ -6,12 +6,12 @@ Analyze the job Description provided below to find max 5 crucial technical words
 Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
 Each bullet point should:
 - Use a STAR approach (Situation, Task, Action, Result).
-- Be concise (maximum 50 words per bullet point).
+- Be concise (maximum 60 words per bullet point).
 - Bold important keywords exactly as provided, using LaTeX's \\textbf{{}} syntax.
 - Use compelling action verbs and quantify results where possible.
 - Align with the responsibilities outlined in the job description.
-Each bullet point should use a STAR-style structure, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (max 80 words)
-Add the significant and important software/technologies used in my resume while maintaning the authenticity of my resume; mainly use what is in the provided resume experience. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
+Each bullet point should use a STAR-style structure, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (min 75 words)
+Add the important softwares and tech stacks used in the job description while maintaning the authenticity of my resume. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
 Focus on the company's values and integrate it with my resume for action verbs or just in general
 Just the Latex code nothing else because Im using the ouput to compile the code into a pdf.
 
