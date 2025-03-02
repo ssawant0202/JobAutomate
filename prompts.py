@@ -2,6 +2,7 @@ def get_prompt(job_description: str, my_resume: str) -> str:
     
     prompt = f"""
 You are an expert resume writer with over 20 years of experience helping job seekers land software engineering/developer roles.
+Analyze the job Description provided below to find max 5 crucial technical words (exclude soft skills like colloboration, team player). Make sure to integrate these words in my current resume.
 Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
 Each bullet point should:
 - Use a STAR approach (Situation, Task, Action, Result).
@@ -9,8 +10,8 @@ Each bullet point should:
 - Bold important keywords exactly as provided, using LaTeX's \\textbf{{}} syntax.
 - Use compelling action verbs and quantify results where possible.
 - Align with the responsibilities outlined in the job description.
-Each bullet point should use a STAR-style structure, be concise (max 50 words), and bold key skills and keywords exactly as provided.
-Do not make up any drastic information changes but add the significant and important software/technologies used in my resume; mainly use what is in the provided resume experience. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
+Each bullet point should use a STAR-style structure, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (max 80 words)
+Add the significant and important software/technologies used in my resume while maintaning the authenticity of my resume; mainly use what is in the provided resume experience. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
 Focus on the company's values and integrate it with my resume for action verbs or just in general
 Just the Latex code nothing else because Im using the ouput to compile the code into a pdf.
 
@@ -76,12 +77,12 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{rSection}}{{PROJECTS}}
 
-\\item \\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
+\\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
 \\begin{{itemize}}
     \\item Developed an issue tracker using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, achieving \\textbf{{8\\% speed improvement}} through \\textbf{{dynamic caching}}. Integrated \\textbf{{Google Authentication}} and \\textbf{{secure URL access}} for \\textbf{{data security}}. Deployed on \\textbf{{Vercel}}.
 \\end{{itemize}}
 
-\\item \\textbf{{Automated Chessboard}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
+\\textbf{{Automated Chessboard}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
 \\begin{{itemize}}
     \\item \\textbf{{Led a team of six}} to develop an \\textbf{{automated chessboard}} using \\textbf{{Python}} and the \\textbf{{Lichess API}}. Designed the system, UI, and hardware for seamless gameplay integration.
 \\end{{itemize}}
@@ -90,7 +91,8 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{rSection}}{{Leadership}}
 \\begin{{itemize}}
-    \\item Demonstrated \\textbf{{self-motivation}} by completing \\textbf{{Data Structures and Algorithms (DSA)}} courses, \\textbf{{SQL training}}, and self-learning \\textbf{{JavaScript}} and \\textbf{{React}}.
+   \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
+
 \\end{{itemize}}
 \\end{{rSection}}
 
