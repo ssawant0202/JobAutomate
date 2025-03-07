@@ -30,6 +30,9 @@ def get_latex_code():
                 with open(job_des_path, "r", encoding="utf-8") as file:
                     job_description = file.read()  # Read content
 
+        latex_file_path = os.path.join(folder_path, "latex_code.txt")
+        # Check if the file already exists
+        if not os.path.exists(latex_file_path):
             latex_code = openAItest.generate_latex_code(job_description, my_resume)
             if latex_code:
                 print(f"✅ Got Latex Code for: {folder}")
@@ -38,14 +41,14 @@ def get_latex_code():
                 file.write(latex_code)
 
         else:
-             print("No dir found! ")
+            print(f"⚠️ Skipping {folder} - LaTeX file already exists.")
 
 
 
 
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
-    descriptionscrapper.generate_description_files()
+    # descriptionscrapper.generate_description_files()
     print("-----✅All descriptions Generated!-----")
     get_latex_code()
     print("-----✅ All Resumes Code Generated!-----")
