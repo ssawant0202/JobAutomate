@@ -13,7 +13,7 @@ Each bullet point should:
 Each bullet point should use a STAR-style structure, and replace the current keywords to match the job description, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (min 75 words)
 According to the job description rewrite my bullet points to make it 80% ATS compliant (Similar words found in the job description). Use my previous responses only as a reference. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
 Focus on the company's values and integrate it with my resume for action verbs or just in general
-Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 
+Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 3 Generated bullet points and 1 Original provided in the formatting.
 
 
 ------------------------------------------------------------
@@ -61,17 +61,19 @@ New/Mode \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 1  *
     \\item * Insert Chat GPT Generated Bullet point 2  *
-    \\item * Insert Chat GPT Generated Bullet point 3   *
+    \\item Improved regression testing suites by writing \\textbf{{Unit Tests in Cypress}}, to optimize deployment time from 2 days to 4 hours and increasing system efficiency in an \\textbf{{Agile environment.}}
+    \\item * Insert Chat GPT Generated Bullet point 3  *
 
 \\end{{itemize}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Jan 2021\\\\
+\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Jan 2022\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 4  *
     \\item * Insert Chat GPT Generated Bullet point 5  *
+    \\item Collaborated with data scientists to innovate  \\textbf{{data segmentation}} techniques on CT, MRI, and retina scans \\textbf{{enhancing machine learning model accuracy by 10%}} through efficient data processing pipelines.
     \\item * Insert Chat GPT Generated Bullet point 6  *
-
+   
 
 \\end{{rSection}}
 
@@ -89,6 +91,12 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\end{{rSection}}
 
+\\begin{{rSection}}{{Certifications}}
+\\begin{{itemize}}
+   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate, \\textbf{{Data Structures and Algorithms}}, \\textbf{{SQL}} Mastery
+\\end{{itemize}}
+\\end{{rSection}}
+
 \\begin{{rSection}}{{Leadership}}
 \\begin{{itemize}}
    \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
@@ -96,11 +104,8 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\end{{itemize}}
 \\end{{rSection}}
 
-\\begin{{rSection}}{{Interests}}
-\\begin{{itemize}}
-   \\item Enjoy playing \\textbf{{competitive chess \\& table tennis}} and \\textbf{{painting acrylic portraits}} in my free time.
-\\end{{itemize}}
-\\end{{rSection}}
+
+
 
 \\end{{rSection}}
 \\end{{document}}

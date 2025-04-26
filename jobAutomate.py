@@ -42,15 +42,15 @@ def get_latex_code():
 
         else:
             print(f"⚠️ Skipping {folder} - LaTeX file already exists.")
+    print("-----✅ All Resumes Code Generated!-----")
+    
 
 
 
 
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
-    # descriptionscrapper.generate_description_files()
-    print("-----✅All descriptions Generated!-----")
+    descriptionscrapper.generate_description_files()
     get_latex_code()
-    print("-----✅ All Resumes Code Generated!-----")
 
 

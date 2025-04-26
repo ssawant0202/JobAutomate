@@ -14,10 +14,14 @@ client = OpenAI(
 )
 # Get the prompt dynamically from prompt.py
 #user_prompt = prompts.get_prompt(job_description, my_resume)
-sys_prompt = system_prompt.get_prompt()
+sys_prompt = "You're an expert Software engineer with 20+ years of experience in development and interviewing fresh graduates"#system_prompt.get_prompt()
+usr_prompt = f""""
+is it benefical to use star format bullet points or to make sure you provide maximum number of technical words in the bullet points. My worry is 
+star format describes a story with less technical key words and more technical words bullet points is less star format like
 
+"""
 completion = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-4-turbo",
     messages=[
         {
             "role": "system", 
@@ -25,8 +29,7 @@ completion = client.chat.completions.create(
         },
         {
             "role": "user",
-            "content": "Can you describe a technical challenge or project you worked on in the past year that you are particularly proud of? What made it significant to you, and what impact did it have on the team or the project? write about my automated chess board project"
-        }
+            "content": usr_prompt }
     ]
 )
 print("-------------------------------------")

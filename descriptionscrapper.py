@@ -44,7 +44,7 @@ def generate_description_files():
 
     # List of folders to create
     # folders = ["Project1", "Project2"]
-    sheet_read = sheet.values().get(spreadsheetId = sheet_id, range = 'A2:B8').execute()
+    sheet_read = sheet.values().get(spreadsheetId = sheet_id, range = 'A2:B4').execute()
     values = sheet_read.get('values', [])
     folders = [row[0] for row in values if row]  # Avoids empty rows
 
@@ -61,6 +61,13 @@ def generate_description_files():
         for attempt in range(retry_attempts): 
             try:
                 # ✅ Start a new WebDriver instance for each job
+                folder_path = os.path.join(parent_dir, folders[index])
+                os.makedirs(folder_path, exist_ok=True)  # Avoids errors if folder exists
+                # ✅ Define the correct file path inside the folder
+                filename = os.path.join(folder_path, "jobDescription.txt")
+                if os.path.exists(filename):
+                    print(f"⚠️ Skipping {folders[index]} - Description already exists.")
+                    break
                 service = Service(chrome_driver_path)
                 options = webdriver.ChromeOptions()
                 options.add_argument("--headless")  # Run Chrome in the background
@@ -93,11 +100,7 @@ def generate_description_files():
 
                     # Create folders
 
-                    folder_path = os.path.join(parent_dir, folders[index])
-                    os.makedirs(folder_path, exist_ok=True)  # Avoids errors if folder exists
-                    # ✅ Define the correct file path inside the folder
-                    filename = os.path.join(folder_path, "jobDescription.txt")
-
+                    
                     with open(filename, "w", encoding="utf-8") as file:
                         file.write(job_description)
 
@@ -107,8 +110,10 @@ def generate_description_files():
                 else:
                     print(f"⚠️ Warning: Job description not found for {link[1]}.")
             except Exception as e:
-                print(f"❌ Error processing {link[1]}: {e}")
+                print(f"❌ Error processing {folders[index]}: {e}")
             finally:
                 driver.quit()
+    print("-----✅All descriptions Generated!-----")
+    
 
 
