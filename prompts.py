@@ -4,8 +4,9 @@ def get_prompt(job_description: str, my_resume: str , important_words:str) -> st
 
 Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
 Each bullet point should:
-- Replace the important_words:{important_words} with the current significant words in my resume whereable applicable
-- Use a STAR approach (Situation, Task, Action, Result).
+- Replace the important_words:{important_words} and the stack they might use with the current significant words in my resume whereable applicable
+- From {important_words}, find all technical skills, soft skills and speciality and replace with the current section
+- Use a STAR approach (Situation, Task, Action, Result) to generate 4 points for each experience section
 - Be concise (About 60 words per bullet point).
 - Bold important keywords exactly as provided, using LaTeX's \\textbf{{}} syntax.
 - Use compelling action verbs and quantify results where possible.
@@ -48,9 +49,9 @@ Just the Latex code nothing else because Im using the ouput to compile the code 
 
 \\begin{{rSection}}{{SKILLS}}
 \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
-Technical Skills & NextJS, SSR, REST APIs, C++, MongoDB, Docker, Linux OS, Python, JAVA, JavaScript \\\\
-Soft Skills & Communication, Problem solving, Critical thinking, Collaboration, Adaptability \\\\
-Specialty & Automated testing, Data structures, Software architecture, Unit testing, Network protocols
+Technical Skills & Python, JAVA, REST APIs, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* \\\\   
+Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
+Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
 \\end{{tabular}}
 \\end{{rSection}}
 
@@ -58,24 +59,23 @@ Specialty & Automated testing, Data structures, Software architecture, Unit test
 
 \\textbf{{Software Development Intern}} \\hfill Jan 2023 - Jan 2024\\\\
 New/Mode \\hfill \\textit{{Vancouver, BC}}
+
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 1  *
     \\item * Insert Chat GPT Generated Bullet point 2  *
     \\item Improved regression testing suites by writing \\textbf{{Unit Tests in Cypress}}, to optimize deployment time from 2 days to 4 hours and increasing system efficiency in an \\textbf{{Agile environment.}}
     \\item * Insert Chat GPT Generated Bullet point 3  *
-
 \\end{{itemize}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Jan 2022\\\\
+\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Aug 2021\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
+
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 4  *
     \\item * Insert Chat GPT Generated Bullet point 5  *
     \\item Collaborated with data scientists to innovate  \\textbf{{data segmentation}} techniques on CT, MRI, and retina scans \\textbf{{enhancing machine learning model accuracy by 10%}} through efficient data processing pipelines.
     \\item * Insert Chat GPT Generated Bullet point 6  *
-   
-
-\\end{{rSection}}
+\\end{{itemize}}
 
 \\begin{{rSection}}{{PROJECTS}}
 
@@ -102,11 +102,9 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
    \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
 
 \\end{{itemize}}
+
+
 \\end{{rSection}}
-
-
-
-
 \\end{{rSection}}
 \\end{{document}}
 

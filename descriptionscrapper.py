@@ -44,7 +44,7 @@ def generate_description_files():
 
     # List of folders to create
     # folders = ["Project1", "Project2"]
-    sheet_read = sheet.values().get(spreadsheetId = sheet_id, range = 'A2:B4').execute()
+    sheet_read = sheet.values().get(spreadsheetId = sheet_id, range = 'A2:B10').execute()
     values = sheet_read.get('values', [])
     folders = [row[0] for row in values if row]  # Avoids empty rows
 
