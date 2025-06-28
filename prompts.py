@@ -118,8 +118,7 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{rSection}}{{Leadership}}
 \\begin{{itemize}}
-   \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
-
+   \\item Established and led a university-wide \\textbf{{table tennis club}}, spearheading event planning, membership drives, and intercollegiate matches, fostering an \\textbf{{inclusive community }} for players across all skill levels, resulting in a 3x growth in participation.
 \\end{{itemize}}
 
 

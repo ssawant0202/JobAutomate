@@ -7,8 +7,12 @@ def get_latex_code():
         parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
         resume_dir = "/Users/siddheshsawant/Documents/JobApplications"
     elif sys.platform == "win32":
-        parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path
-        resume_dir = r"E:\Applications 2024"
+        # parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path (local path)
+        # resume_dir = r"E:\Applications 2024"
+        parent_dir = r"\\192.168.5.3\JobApplications\AutomatedPDFs"  # Change to your desired path (shared path on mac)
+        resume_dir = r"\\192.168.5.3\JobApplications"
+
+        
     else:
         raise RuntimeError("Unsupported OS")
     
@@ -29,6 +33,8 @@ def get_latex_code():
             if os.path.exists(job_des_path):  # Ensure job_description.txt exists
                 with open(job_des_path, "r", encoding="utf-8") as file:
                     job_description = file.read()  # Read content
+            else:
+                 print("Job description file doesn't exist!")
 
         latex_file_path = os.path.join(folder_path, "latex_code.txt")
         # Check if the file already exists
