@@ -34,10 +34,6 @@ Based on the following job description and my resume, generate a high-quality La
   - Be **concise** (60–70 words)
   - Use **bold LaTeX syntax** for important technologies and keywords: \\textbf{{example}}
   - Avoid generic phrases — be specific and technically insightful
-- For the **Projects** section:
-  - Use STAR-style bullet points
-  - Make them slightly longer (min. 75 words)
-  - Focus heavily on **implementation details**, design trade-offs, and technologies used
 
 ### Output Requirements:
 - Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
