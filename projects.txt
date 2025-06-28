@@ -1,0 +1,14 @@
+\\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
+\\begin{{itemize}}
+    \\item Developed an issue tracker using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, achieving \\textbf{{8\\% speed improvement}} through \\textbf{{dynamic caching}}. Integrated \\textbf{{Google Authentication}} and \\textbf{{secure URL access}} for \\textbf{{data security}}. Deployed on \\textbf{{Vercel}}.
+\\end{{itemize}}
+
+\\textbf{{Automated Chessboard}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
+\\begin{{itemize}}
+    \\item \\textbf{{Led a team of six}} to develop an \\textbf{{automated chessboard}} leveraging Python and the \\textbf{{Lichess API}} with \\textbf{{OAuthbased}} login. Designed and built the system, including UI for game initialization and detailed circuitry for seamless physical and digital gameplay integration.
+\\end{{itemize}}
+
+\\textbf{{Course Scheduling Java}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
+\\begin{{itemize}}
+    \\item Developed a Spring Boot application for managing courses, enrollments, and student records, integrating REST APIs for seamless communication between frontend and backend. Optimized database operations using PostgreSQL and implemented LIFO stack-based caching to enhance query performance by 15%. Ensured secure authentication with JWT and deployed scalable microservices on AWS
+\\end{{itemize}}

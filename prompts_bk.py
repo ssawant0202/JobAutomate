@@ -2,7 +2,21 @@ def get_prompt(job_description: str, my_resume: str , important_words:str) -> st
     
     prompt = f"""
 
-Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing bullet points that emphasize **how** value was delivered — not just what was done.
+Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
+Each bullet point should:
+- Replace the important_words:{important_words} and the stack they might use with the current significant words in my resume whereable applicable
+- From {important_words}, find all technical skills, soft skills and speciality and replace with the current section
+- Use a STAR approach (Situation, Task, Action, Result) to generate 4 points for each experience section
+- Be concise (About 60 words per bullet point).
+- Bold important keywords exactly as provided, using LaTeX's \\textbf{{}} syntax.
+- Use compelling action verbs and quantify results where possible.
+- Align with the responsibilities outlined in the job description.
+- Create a narrative for bullet points, avoid generic sentences use actual keywords like onboarding process or donations module etc.
+Each bullet point should use a STAR-style structure, and replace the current keywords to match the job description, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (min 75 words)
+According to the job description rewrite my bullet points to make it 80% ATS compliant (Similar words found in the job description). Use my previous responses only as a reference. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
+Focus on the company's values and integrate it with my resume for action verbs or just in general
+Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 3 Generated bullet points and 1 Original provided in the formatting.
+
 
 ------------------------------------------------------------
 **Job Description:**
@@ -11,42 +25,6 @@ Based on the following job description and my resume, generate a high-quality La
 ------------------------------------------------------------
 **Resume Experience:**
 {my_resume}
-
-------------------------------------------------------------
-**Important Words & Skills (from JD):**
-{important_words}
-
-------------------------------------------------------------
-**Instructions for Bullet Points:**
-
-- Rewrite each bullet point using the **STAR method** (Situation, Task, Action, Result).
-- **Prioritize the “how”**: Each bullet must explain how the outcome was achieved — the **tools, techniques, technical approaches, design decisions, or problem-solving steps** used.
-  - Examples of “how” phrasing to use: “by implementing...”, “through optimizing...”, “using X to solve Y...”, “leveraging A to refactor B...”, etc.
-- Include:
-  - **Technical depth** — specific stack, libraries, frameworks, optimization techniques, CI/CD tools, data handling approaches, etc.
-  - **Concrete action** — what you built, improved, or debugged and how you tackled it.
-  - **Quantified results** — latency reduced, costs saved, users onboarded, bugs fixed, etc.
-- Replace any keywords in `{important_words}` with matching terms already in my resume when possible.
-- For each experience:
-  - Generate **3 new bullet points** focused on “how”
-  - Keep **1 original bullet point** exactly as-is
-- Each bullet must:
-  - Be **concise** (60–70 words)
-  - Use **bold LaTeX syntax** for important technologies and keywords: \\textbf{{example}}
-  - Avoid generic phrases — be specific and technically insightful
-- For the **Projects** section:
-  - Use STAR-style bullet points
-  - Make them slightly longer (min. 75 words)
-  - Focus heavily on **implementation details**, design trade-offs, and technologies used
-
-### Output Requirements:
-- Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
-- Do **not** include any Markdown like triple backticks (```).
-- Escape all LaTeX-sensitive characters (`%`, `&`, etc.) with a backslash.
-- Keep the LaTeX structure **exactly the same** as the provided example.
-- Replace only the `\\item` bullet point text.
-
-------------------------------------------------------------
 
 ------------------------------------------------------------
 **Output Format (Example):**
@@ -86,8 +64,8 @@ New/Mode \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 1  *
     \\item * Insert Chat GPT Generated Bullet point 2  *
+    \\item Improved regression testing suites by writing \\textbf{{Unit Tests in Cypress}}, to optimize deployment time from 2 days to 4 hours and increasing system efficiency in an \\textbf{{Agile environment.}}
     \\item * Insert Chat GPT Generated Bullet point 3  *
-    \\item * Insert Chat GPT Generated Bullet point 4  *
 \\end{{itemize}}
 
 \\textbf{{Software Development Intern}} \\hfill Jan 2021 - Aug 2021\\\\
@@ -96,8 +74,8 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 4  *
     \\item * Insert Chat GPT Generated Bullet point 5  *
+    \\item Collaborated with data scientists to innovate  \\textbf{{data segmentation}} techniques on CT, MRI, and retina scans \\textbf{{enhancing machine learning model accuracy by 10%}} through efficient data processing pipelines.
     \\item * Insert Chat GPT Generated Bullet point 6  *
-    \\item * Insert Chat GPT Generated Bullet point 7  *
 \\end{{itemize}}
 
 \\begin{{rSection}}{{PROJECTS}}
@@ -131,10 +109,14 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 \\end{{rSection}}
 \\end{{document}}
 
-
+### IMPORTANT POINT ###
+given my new/mode experience, if possible make up stuff but give me some bullet points stating how I added value to the company instead of saying what I did at the company ex, I used AWS lambda and saved 15000$ anually or I improved SQL queries by doing xyz that reduced the load and huge data retirival times by x seconds 
 ### OUTPUT FORMAT ###
 Use The exact same  LaTeX format resume just update the \\items (bullet points) nothing else so that the over structure remains the same.
 please do not add '```latex' above \\documentclass{{resume}} and '```' below \\end{{document}}
+if there is & or % sign in bullet points make sure to add backslash before it ex R\\&D
+
+Now, generate the bullet points in LaTeX format based on the above job description with matching keywords.
 """
     return prompt
 
