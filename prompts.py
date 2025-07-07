@@ -54,7 +54,7 @@ Based on the following job description and my resume, generate a high-quality La
 \\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
 \\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
 \\name{{Siddhesh Sawant}}
-\\address{{+1(236) 867-1693 \\\\ Coquitlam, BC}}
+\\address{{+1(236) 867-1693 \\\\ Vancouver, BC}}
 \\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}}\\\\ 
 \\href{{https://www.linkedin.com/in/ssawant0202/}}{{linkedin.com}} \\\\ 
 \\href{{https://ssawant.netlify.app/}}{{Portfolio}}}}
@@ -68,15 +68,15 @@ Based on the following job description and my resume, generate a high-quality La
 
 \\begin{{rSection}}{{SKILLS}}
 \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
-Technical Skills & Python, JAVA, REST APIs, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* \\\\   
-Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
-Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
+Technical Skills & Python, JAVA, REST APIs, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
+Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
+Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
 \\end{{tabular}}
 \\end{{rSection}}
 
 \\begin{{rSection}}{{EXPERIENCE}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2023 - Jan 2024\\\\
+\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2024 - Jan 2025\\\\
 New/Mode \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}
@@ -86,7 +86,7 @@ New/Mode \\hfill \\textit{{Vancouver, BC}}
     \\item * Insert Chat GPT Generated Bullet point 4  *
 \\end{{itemize}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Aug 2021\\\\
+\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2022 - Aug 2022\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}
