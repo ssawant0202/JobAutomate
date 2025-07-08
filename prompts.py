@@ -112,7 +112,7 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{rSection}}{{Certifications}}
 \\begin{{itemize}}
-   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate, \\textbf{{Data Structures and Algorithms}}, \\textbf{{SQL}} Mastery
+   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate\\textbf{{ }} •  \\textbf{{ }} \\textbf{{DSA}} Data Structures and Algorithms \\textbf{{ }} •  \\textbf{{ }}\textbf{{SQL}} Mastery
 \\end{{itemize}}
 \\end{{rSection}}
 
