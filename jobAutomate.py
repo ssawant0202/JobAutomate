@@ -7,8 +7,8 @@ def get_latex_code():
         parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
         resume_dir = "/Users/siddheshsawant/Documents/JobApplications"
     elif sys.platform == "win32":
-        parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path
-        resume_dir = r"E:\Applications 2024"
+        parent_dir = r"\\192.168.5.3\JobApplications\AutomatedPDFs"  # Change to your desired path
+        resume_dir = r"\\192.168.5.3\JobApplications"
     else:
         raise RuntimeError("Unsupported OS")
     
