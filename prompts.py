@@ -42,6 +42,7 @@ Based on the following job description and my resume, generate a high-quality La
 - Keep the LaTeX structure **exactly the same** as the provided example.
 - Replace only the `\\item` bullet point text.
 
+
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -63,7 +64,7 @@ Based on the following job description and my resume, generate a high-quality La
 
 \\begin{{rSection}}{{Education}}
 {{\\bf Bachelor of Computer Engineering}}, Simon Fraser University \\hfill {{October 2024}}\\\\
-\\textbf{{Relevant Coursework}}:  DSA, OOP, Web Development, Database, Android, UI/UX, Networking \& Security, Digital Logic
+\\textbf{{Relevant Coursework}}:  DSA, OOP, Web Development, Database, Android, UI/UX, Networking \\& Security, Digital Logic
 \\end{{rSection}}
 
 \\begin{{rSection}}{{SKILLS}}
@@ -112,7 +113,7 @@ Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{rSection}}{{Certifications}}
 \\begin{{itemize}}
-   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate\\textbf{{ }} •  \\textbf{{ }} \\textbf{{DSA}} Data Structures and Algorithms \\textbf{{ }} •  \\textbf{{ }}\textbf{{SQL}} Mastery
+   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate\\textbf{{ }} •  \\textbf{{ }} \\textbf{{DSA}} Data Structures and Algorithms \\textbf{{ }} •  \\textbf{{ }}\\textbf{{SQL}} Mastery
 \\end{{itemize}}
 \\end{{rSection}}
 
