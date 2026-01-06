@@ -50,7 +50,7 @@ def get_latex_code():
 
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
-    descriptionscrapper.generate_description_files()
+    # descriptionscrapper.generate_description_files()
     get_latex_code()
 
     

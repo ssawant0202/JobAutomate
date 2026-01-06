@@ -21,7 +21,9 @@ star format describes a story with less technical key words and more technical w
 
 """
 completion = client.chat.completions.create(
-    model="gpt-4-turbo",
+    # model="gpt-4-turbo",
+    model="gpt-5.2",
+    
     messages=[
         {
             "role": "system", 
