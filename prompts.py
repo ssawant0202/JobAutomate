@@ -19,26 +19,46 @@ Based on the following job description and my resume, generate a high-quality La
 ------------------------------------------------------------
 **Instructions for Bullet Points:**
 
-- Rewrite each bullet point using the **STAR method** (Situation, Task, Action, Result).
-- **Prioritize the “how”**: Each bullet must explain how the outcome was achieved — the **tools, techniques, technical approaches, design decisions, or problem-solving steps** used.
-  - Examples of “how” phrasing to use: “by implementing...”, “through optimizing...”, “using X to solve Y...”, “leveraging A to refactor B...”, etc.
-- Include:
-  - **Technical depth** — specific stack, libraries, frameworks, optimization techniques, CI/CD tools, data handling approaches, etc.
-  - **Concrete action** — what you built, improved, or debugged and how you tackled it.
-  - **Quantified results** — latency reduced, costs saved, users onboarded, bugs fixed, etc.
-- Replace any keywords in `{important_words}` with matching terms already in my resume when possible.
-- For each experience:
-  - Generate **3 new bullet points** focused on “how”
-  - Keep **1 original bullet point** exactly as-is
-- Each bullet must:
-  - Be **concise** (60–70 words)
-  - Use **bold LaTeX syntax** for important technologies and keywords: \\textbf{{example}}
-  - Avoid generic phrases — be specific and technically insightful
+CRITICAL CONSTRAINTS (DO NOT VIOLATE):
+- You MUST NOT invent new responsibilities, tools, systems, or outcomes.
+- Every bullet point MUST be directly grounded in my existing resume content.
+- If a job description requirement is NOT supported by my resume, DO NOT fabricate experience to match it.
+- You may only rephrase, restructure, or emphasize what I have already done.
+
+INPUTS YOU WILL RECEIVE:
+1. My existing resume bullet points (this is the ONLY source of truth).
+2. A job description.
+3. A list of important_words extracted from the job description.
+
+TASK:
+  - Rewrite each existing resume bullet using the STAR method:
+  - Situation: inferred only from my resume context
+  - Task: what I was responsible for (from resume)
+  - Action: HOW I did it (tools, techniques, decisions explicitly present in resume)
+  - Result: outcomes that are already stated or reasonably implied (do NOT exaggerate)
+
+ALIGNMENT RULES:
+- Align language and emphasis to the job description ONLY WHERE THERE IS DIRECT OVERLAP with my resume.
+- If there is no overlap, keep the bullet faithful to my resume rather than forcing a match.
+- Prefer my resume truth over job description matching.
+
+KEYWORD RULES:
+- Replace keywords in {important_words} ONLY if an equivalent term already exists in my resume.
+- Do NOT introduce new technologies, frameworks, or methodologies.
+
+OUTPUT REQUIREMENTS:
+- Generate exactly 5 rewritten bullets per experience.
+- Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
+- Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
+- Quantify results ONLY if numbers already exist or can be conservatively inferred.
+- Each bullet: 60–70 words.
+- Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
+- Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
 
 ### Output Requirements:
 - Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
 - Do **not** include any Markdown like triple backticks (```).
-- Escape all LaTeX-sensitive characters (`%`, `&`, etc.) with a backslash.
+- Escape all LaTeX-sensitive characters (`%`, `&`, '$' etc.) with a backslash.
 - Keep the LaTeX structure **exactly the same** as the provided example.
 - Replace only the `\\item` bullet point text.
 
@@ -69,9 +89,9 @@ Based on the following job description and my resume, generate a high-quality La
 
 \\begin{{rSection}}{{SKILLS}}
 \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
-Technical Skills & Python, JAVA, REST APIs, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
-Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
-Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
+Technical Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,\\\\   
+Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
+Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,
 \\end{{tabular}}
 \\end{{rSection}}
 
@@ -85,46 +105,40 @@ New/Mode \\hfill \\textit{{Vancouver, BC}}
     \\item * Insert Chat GPT Generated Bullet point 2  *
     \\item * Insert Chat GPT Generated Bullet point 3  *
     \\item * Insert Chat GPT Generated Bullet point 4  *
+    \\item * Insert Chat GPT Generated Bullet point 5  *
+
 \\end{{itemize}}
 
 \\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2022 - Aug 2022\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}
-    \\item * Insert Chat GPT Generated Bullet point 4  *
-    \\item * Insert Chat GPT Generated Bullet point 5  *
     \\item * Insert Chat GPT Generated Bullet point 6  *
     \\item * Insert Chat GPT Generated Bullet point 7  *
+    \\item * Insert Chat GPT Generated Bullet point 8  *
+    \\item * Insert Chat GPT Generated Bullet point 9  *
+    \\item * Insert Chat GPT Generated Bullet point 10  *
+
 \\end{{itemize}}
 
 \\begin{{rSection}}{{PROJECTS}}
 
 \\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
 \\begin{{itemize}}
-    \\item Developed an issue tracker using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, achieving \\textbf{{8\\% speed improvement}} through \\textbf{{dynamic caching}}. Integrated \\textbf{{Google Authentication}} and \\textbf{{secure URL access}} for \\textbf{{data security}}. Deployed on \\textbf{{Vercel}}.
+    \\item Built and deployed a production-grade issue tracking system using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, implementing \\textbf{{Google OAuth}} authentication, role-based access control, and dynamic caching to improve request latency.
+Containerized application and test infrastructure using \\textbf{{Docker}} (separate dev/prod images, multi-stage builds) and orchestrated services with \\textbf{{Docker Compose}} for local and CI parity.
+Designed \\textbf{{end-to-end API automation}} with \\textbf{{pytest}} and integrated it into a \\textbf{{GitHub Actions CI/CD pipeline}}, including database-level assertions and regression gating on every commit.
 \\end{{itemize}}
 
-\\textbf{{Automated Chessboard}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
+\\textbf{{AI-Powered Test Failure Triage}}
 \\begin{{itemize}}
-    \\item \\textbf{{Led a team of six}} to develop an \\textbf{{automated chessboard}} leveraging Python and the \\textbf{{Lichess API}} with \\textbf{{OAuthbased}} login. Designed and built the system, including UI for game initialization and detailed circuitry for seamless physical and digital gameplay integration.
-\\end{{itemize}}
 
+   \\item Integrated \\textbf{{ChatGPT API}} into a CI/CD workflow to automatically analyze failed \\textbf{{API and integration tests}}, generating structured summaries and root-cause classifications from test logs.
+    Implemented validation, timeouts, and fallback logic to treat AI output as \\textbf{{untrusted input}}, ensuring deterministic behavior in \\textbf{{CI pipelines}}.
+    Attached AI-generated insights directly to the \\textbf{{issue tracker}} to accelerate debugging and reduce mean time to resolution.
 \\end{{rSection}}
 
-\\begin{{rSection}}{{Certifications}}
-\\begin{{itemize}}
-   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate\\textbf{{ }} •  \\textbf{{ }} \\textbf{{DSA}} Data Structures and Algorithms \\textbf{{ }} •  \\textbf{{ }}\\textbf{{SQL}} Mastery
-\\end{{itemize}}
-\\end{{rSection}}
 
-\\begin{{rSection}}{{Leadership}}
-\\begin{{itemize}}
-   \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
-
-\\end{{itemize}}
-
-
-\\end{{rSection}}
 \\end{{rSection}}
 \\end{{document}}
 

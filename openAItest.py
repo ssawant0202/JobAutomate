@@ -20,6 +20,8 @@ def generate_latex_code(job_description: str, my_resume: str) -> str:
 
     key_words_completion = client.chat.completions.create(
         model="gpt-4-turbo",
+        # model="gpt-5.2",
+
         messages=[
             {
                 "role": "system", 
@@ -36,6 +38,8 @@ def generate_latex_code(job_description: str, my_resume: str) -> str:
 
     completion = client.chat.completions.create(
         model="gpt-4-turbo",
+        # model="gpt-5.2",
+
         messages=[
             {
                 "role": "system", 

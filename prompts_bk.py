@@ -17,7 +17,25 @@ According to the job description rewrite my bullet points to make it 80% ATS com
 Focus on the company's values and integrate it with my resume for action verbs or just in general
 Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 3 Generated bullet points and 1 Original provided in the formatting.
 
+- Rewrite each bullet point using the **STAR method** (Situation, Task, Action, Result).
+- Use my existing resume as a reference to generate relevant bullet points Dont make up random bullet points
+- The generated bullet points should be highly matching to the job description
+- **Prioritize the “how”**: Each bullet must explain how the outcome was achieved — the **tools, techniques, technical approaches, design decisions, or problem-solving steps** used.
+  - Examples of “how” phrasing to use: “by implementing...”, “through optimizing...”, “using X to solve Y...”, “leveraging A to refactor B...”, etc.
+- Include:
+  - **Technical depth** — specific stack, libraries, frameworks, optimization techniques, CI/CD tools, data handling approaches, etc.
+  - **Concrete action** — what you built, improved, or debugged and how you tackled it.
+  - **Quantified results** — latency reduced, costs saved, users onboarded, bugs fixed, etc.
+- Replace any keywords in `{important_words}` with matching terms already in my resume when possible.
+- For each experience:
+  - Generate **5 new bullet points** focused on “how”
+  - Use the content from my existing resume to generate new bullet points matching the job description
+- Each bullet must:
+  - Be **concise** (60–70 words)
+  - Use **bold LaTeX syntax** for important technologies and keywords: \\textbf{{example}}
+  - Avoid generic phrases — be specific and technically insightful
 
+  
 ------------------------------------------------------------
 **Job Description:**
 {job_description}
@@ -119,4 +137,6 @@ if there is & or % sign in bullet points make sure to add backslash before it ex
 Now, generate the bullet points in LaTeX format based on the above job description with matching keywords.
 """
     return prompt
+
+
 
