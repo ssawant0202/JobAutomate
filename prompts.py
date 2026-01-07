@@ -20,13 +20,13 @@ Based on the following job description and my resume, generate a high-quality La
 **Instructions for Bullet Points:**
 
 CRITICAL CONSTRAINTS (DO NOT VIOLATE):
-- You MUST NOT invent new responsibilities, tools, systems, or outcomes.
+- You can invent new responsibilities IF ABSOLUTELY NECESSARY TO get a ATS friendly result, tools, systems, or outcomes.
 - Every bullet point MUST be directly grounded in my existing resume content.
-- If a job description requirement is NOT supported by my resume, DO NOT fabricate experience to match it.
-- You may only rephrase, restructure, or emphasize what I have already done.
+- If a job description requirement is NOT supported by my resume, try to Mix my resume content with the job description
+- Prefer to rephrase, restructure, or emphasize what I have already done.
 
 INPUTS YOU WILL RECEIVE:
-1. My existing resume bullet points (this is the ONLY source of truth).
+1. My existing resume bullet points
 2. A job description.
 3. A list of important_words extracted from the job description.
 
@@ -38,16 +38,17 @@ TASK:
   - Result: outcomes that are already stated or reasonably implied (do NOT exaggerate)
 
 ALIGNMENT RULES:
-- Align language and emphasis to the job description ONLY WHERE THERE IS DIRECT OVERLAP with my resume.
-- If there is no overlap, keep the bullet faithful to my resume rather than forcing a match.
-- Prefer my resume truth over job description matching.
+- Always Align language and emphasis to the job description with my resume.
+- If there is no overlap, Mix the and JD and my existing bullet point to force a highly ATS matching bullet point .
+
 
 KEYWORD RULES:
 - Replace keywords in {important_words} ONLY if an equivalent term already exists in my resume.
-- Do NOT introduce new technologies, frameworks, or methodologies.
+
 
 OUTPUT REQUIREMENTS:
 - Generate exactly 5 rewritten bullets per experience.
+- Generate Skills matching to the job description and fill in *Insert Skill* in Skills section 
 - Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
 - Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
 - Quantify results ONLY if numbers already exist or can be conservatively inferred.

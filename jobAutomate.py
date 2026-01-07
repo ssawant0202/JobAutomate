@@ -5,7 +5,7 @@ def get_latex_code():
     # Define the parent directory
     if sys.platform == "darwin":
         parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
-        resume_dir = "/Users/siddheshsawant/Documents/JobApplications"
+        resume_dir = "/Users/siddheshsawant/Projects/JobAutomate"
     elif sys.platform == "win32":
         parent_dir = r"\\192.168.5.3\JobApplications\AutomatedPDFs"  # Change to your desired path
         resume_dir = r"\\192.168.5.3\JobApplications"
