@@ -2,7 +2,7 @@ def get_prompt(job_description: str, my_resume: str , important_words:str) -> st
     
     prompt = f"""
 
-Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing bullet points that emphasize **how** value was delivered — not just what was done.
+Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing highly ATS-optimized with high keyword recall and semantic alignment bullet points that emphasize **how** value was delivered — not just what was done.
 
 ------------------------------------------------------------
 **Job Description:**
@@ -35,7 +35,7 @@ TASK:
   - Situation: inferred only from my resume context
   - Task: what I was responsible for (from resume)
   - Action: HOW I did it (tools, techniques, decisions explicitly present in resume)
-  - Result: outcomes that are already stated or reasonably implied (do NOT exaggerate)
+  - Result: QUANTIFY every outcome where ever possible 
 
 ALIGNMENT RULES:
 - Always Align language and emphasis to the job description with my resume.
@@ -43,7 +43,8 @@ ALIGNMENT RULES:
 
 
 KEYWORD RULES:
-- Always Replace top critical keywords in {important_words} into my upcoming bullet point generation.
+- Mostly try to Replace top critical keywords in {important_words} into my upcoming bullet point generation.
+- Try to Replace most critical keywords in {important_words} into my skills section respectively.
 
 
 OUTPUT REQUIREMENTS:
@@ -137,8 +138,10 @@ Designed \\textbf{{end-to-end API automation}} with \\textbf{{pytest}} and integ
    \\item Integrated \\textbf{{ChatGPT API}} into a CI/CD workflow to automatically analyze failed \\textbf{{API and integration tests}}, generating structured summaries and root-cause classifications from test logs.
     Implemented validation, timeouts, and fallback logic to treat AI output as \\textbf{{untrusted input}}, ensuring deterministic behavior in \\textbf{{CI pipelines}}.
     Attached AI-generated insights directly to the \\textbf{{issue tracker}} to accelerate debugging and reduce mean time to resolution.
-\\end{{rSection}}
+\\end{{itemize}}
 
+
+\\end{{rSection}}
 
 \\end{{rSection}}
 \\end{{document}}
