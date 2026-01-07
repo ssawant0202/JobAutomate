@@ -31,7 +31,7 @@ INPUTS YOU WILL RECEIVE:
 3. A list of important_words extracted from the job description.
 
 TASK:
-  - Rewrite each existing resume bullet using the STAR method:
+  - Rewrite each existing resume bullet using the STAR method that is ATS friendly and hihgly matches the Job description:
   - Situation: inferred only from my resume context
   - Task: what I was responsible for (from resume)
   - Action: HOW I did it (tools, techniques, decisions explicitly present in resume)
@@ -43,7 +43,7 @@ ALIGNMENT RULES:
 
 
 KEYWORD RULES:
-- Replace keywords in {important_words} ONLY if an equivalent term already exists in my resume.
+- Always Replace top critical keywords in {important_words} into my upcoming bullet point generation.
 
 
 OUTPUT REQUIREMENTS:

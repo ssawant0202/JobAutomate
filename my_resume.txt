@@ -25,10 +25,6 @@ Backend & API Quality Engineering
 	•	Built automated API test suites using pytest to validate REST endpoints end-to-end
 
 
-Impact: Reduced undetected regressions and increased confidence in backend changes before deployment
-
-⸻
-
 SQL Performance & Data Layer Optimization
 	•	Analyzed slow queries using EXPLAIN / EXPLAIN ANALYZE to understand execution plans and bottlenecks
 
@@ -38,11 +34,7 @@ SQL Performance & Data Layer Optimization
 	•	Used SQL assertions inside test suites to confirm transactional correctness after API calls
 	•	Debugged data inconsistencies by tracing API requests to underlying database mutations
 	•	Applied normalization concepts and foreign key constraints to model realistic domain relationships
-	
 
-Impact: Reduced API response times and database load under concurrent usage
-
-⸻
 
 Docker & Container Optimization
 
@@ -53,9 +45,6 @@ Docker & Container Optimization
 	•	minimal, secure, deterministic images in prod
 	•	Debugged container failures by inspecting filesystem state, environment variables, permissions, and runtime logs
 
-Impact: Faster CI builds, lower resource usage, and clearer separation between dev and production environments
-
-⸻
 
 Docker Compose & Local Orchestration
 
@@ -66,9 +55,6 @@ Docker Compose & Local Orchestration
  	• 	Refactored Dockerfiles and reduced image size by 60% for Spring Boot microservices, enabling parallel container
  		deployment and reducing startup time by 25%
 
-Impact: Reduced “works on my machine” failures and improved developer feedback loops
-
-⸻
 
 CI/CD Engineering (GitHub Actions)
 
@@ -83,10 +69,6 @@ CI/CD Engineering (GitHub Actions)
  	• 	Built CI pipelines in CircleCI to automate integration and regression testing, while setting up AWS CloudWatch alerts
  		and log aggregation, leading to a 40% reduction in unplanned downtime.
 
-
-
-⸻
-
 Performance & Load Testing
 	•	Designed and executed API-level performance tests to evaluate system behavior under concurrent load
 	•	Identified bottlenecks caused by:
@@ -94,20 +76,11 @@ Performance & Load Testing
 	•	database contention
 
 
-Impact: Improved system resilience and predictability under load
-
-⸻
-
 Microservices Architecture & Debugging
 	•	Debugged failures across API, database, container, and CI layers end-to-end
 	•	Identified root causes instead of symptom-level fixes
 	•	Compared local vs CI behavior to uncover environment-specific issues
 	•	Applied structured troubleshooting instead of trial-and-error fixes
-
-
-Impact: Faster root-cause identification in distributed systems
-
-⸻
 
 Observability: Logging, Metrics & Monitoring
 
@@ -115,9 +88,6 @@ Observability: Logging, Metrics & Monitoring
 	•	Instrumented basic metrics (latency, error rates, throughput) for performance visibility
 	•	Used Prometheus/Grafana concepts to reason about system health and performance trends
 
-Impact: Reduced mean time to diagnose (MTTD) and improved confidence during deployments
-
-⸻
 
 Linux & Runtime Debugging
 
@@ -126,9 +96,6 @@ Linux & Runtime Debugging
 
 	•	Diagnosed port conflicts, permission issues, and misconfigured environment variables inside containers and CI runners
 
-Impact: Faster resolution of production-like failures without guesswork
-
-⸻
 
 Test Strategy & Engineering Judgment
 
@@ -138,25 +105,18 @@ Test Strategy & Engineering Judgment
 
 	•	Made explicit tradeoffs between test depth and pipeline execution time
 
-Impact: Sustainable automation that scales with system complexity
-
-⸻
 
 Production-Ready Engineering Mindset
 
 	•	Designed workflows to scale from local development → CI → container orchestration
 
 
-Impact: Systems that are easier to deploy, debug, and evolve
-
-⸻
-
 Foundational Cloud / Deployment Readiness
 
 	•	Prepared application for future orchestration (Kubernetes-ready architecture)
 
 
- AI Integration Readiness (Controlled, Non-Hype)
+AI Integration Readiness (Controlled, Non-Hype)
 	•	Integrated AI as a bounded backend dependency with validation, timeouts, and fallbacks
 
 	•	Designed AI-assisted features to degrade gracefully when unavailable
@@ -175,9 +135,6 @@ Backend & API Quality Engineering
 	•	Integrated database assertions to verify API side effects beyond HTTP responses
 	•	Diagnosed flaky tests by isolating environment, timing, and data-dependency issues
 
-Impact: Reduced undetected regressions and increased confidence in backend changes before deployment
-
-⸻
 
 SQL Performance & Data Layer Optimization
 	•	Optimized query performance by:
@@ -185,11 +142,6 @@ SQL Performance & Data Layer Optimization
 	•	restructuring joins to avoid unnecessary table scans
 	•	eliminating N+1 query patterns in API workflows
 	•	Measured and validated improvements using before/after latency benchmarks at the API level
-
-
-Impact: Reduced API response times and database load under concurrent usage
-
-⸻
 
 Docker & Container Optimization
 	•	Dockerized backend services and test suites with clean, minimal images tailored for each responsibility
@@ -201,18 +153,12 @@ Docker & Container Optimization
 	•	hot-reloading and debugging in dev
 	•	Dockerized backend services and API test suites into isolated, reproducible containers
 
-
-⸻
-
 Docker Compose & Local Orchestration
 	•	Built multi-service Docker Compose setups to orchestrate application, database, and test services
 	•	Controlled startup sequencing and health checks to ensure reliable integration testing
 	•	Used volume bindings for rapid local iteration while preserving container isolation
 	•	Defined multi-service Docker Compose configurations to orchestrate app, database, and test services
 
-Impact: Reduced “works on my machine” failures and improved developer feedback loops
-
-⸻
 
 CI/CD Engineering (GitHub Actions)
 	•	Designed CI pipelines that:
@@ -223,18 +169,11 @@ CI/CD Engineering (GitHub Actions)
 	•	Integrated Docker Compose into CI to ensure parity between local and pipeline environments
 
 
-
-⸻
-
 Performance & Load Testing
 
 	•	synchronous blocking calls in request paths
 	•	Validated system degradation patterns and ensured graceful failure rather than hard crashes
 	•	Used performance data to guide targeted optimizations instead of premature tuning
-
-Impact: Improved system resilience and predictability under load
-
-⸻
 
 Microservices Architecture & Debugging
 	•	Structured services to support clear API boundaries and independent deployment
@@ -246,30 +185,15 @@ Microservices Architecture & Debugging
 	•	Debugged failures across API, database, container, and CI layers end-to-end
 
 
-
-
-
-⸻
-
 Observability: Logging, Metrics & Monitoring
 	•	Implemented structured logging with consistent log levels to support debugging across environments
 
-
-
-
-
-⸻
 
 Linux & Runtime Debugging
 	•	Navigated Linux environments to inspect logs, processes, ports, and environment variables
 	•	Debugged runtime issues using tools such as curl, lsof, ps, env, and tail -f
 	•	Navigated Linux environments confidently to inspect logs, processes, and file systems inside containers
 	•	Used command-line tools (curl, ps, lsof, env, tail) to debug API and service issues
-
-
-Impact: Faster resolution of production-like failures without guesswork
-
-⸻
 
 Test Strategy & Engineering Judgment
 	•	Designed test strategies that balance coverage, speed, and reliability
@@ -278,25 +202,18 @@ Test Strategy & Engineering Judgment
 	•	Distinguished between unit-level, integration-level, and end-to-end tests
 
 
-Impact: Sustainable automation that scales with system complexity
-
-⸻
-
 Production-Ready Engineering Mindset
 	•	Built systems with environment-agnostic configuration and reproducible builds
 	•	Designed workflows to scale from local development → CI → container orchestration
 	•	Treated failures as signals to improve system design, not one-off fixes
 
-Impact: Systems that are easier to deploy, debug, and evolve
-
-⸻
 
 Foundational Cloud / Deployment Readiness
 	•	Built systems with environment-agnostic configuration (env vars, containers)
 
 
 
- AI Integration Readiness (Controlled, Non-Hype)
+ AI Integration Readiness 
 
 	•	Treated AI output as untrusted input, enforcing schema and sanity checks
 
@@ -307,12 +224,12 @@ Foundational Cloud / Deployment Readiness
 PROJECTS
 Smart Issue Tracker (Website)
 Website: https://issue-tracker-kappa-nine.vercel.app/
-	•	Built and deployed a production-grade issue tracking system using Next.js, Radix UI, and AWS RDS, implementing Google OAuth authentication, role-based access control, and dynamic caching to improve request 			latency.
-	•	Containerized the application and test infrastructure using Docker (separate dev/prod images, multi-stage builds) and orchestrated services with Docker Compose to maintain parity between local development and 		CI environments.
-	•	Designed end-to-end API automation using pytest and integrated it into a GitHub Actions CI/CD pipeline, including database-level assertions and regression gating on every commit.
+	•	Built and deployed a production-grade issue tracking system using Next.js, Radix UI, and AWS RDS, implementing Google OAuth authentication, role-based access control, and dynamic caching to improve request latency. 
+        Containerized the application and test infrastructure using Docker (separate dev/prod images, multi-stage builds) and orchestrated services with Docker Compose to maintain parity between local development and CI environments. 
+        Designed end-to-end API automation using pytest and integrated it into a GitHub Actions CI/CD pipeline, including database-level assertions and regression gating on every commit.
 
 AI-Powered Test Failure Triage
 
 	•	Integrated the ChatGPT API into a CI/CD workflow to automatically analyze failed API and integration tests, generating structured summaries and root-cause classifications from test logs.
-	•	Implemented validation, timeouts, and fallback logic to treat AI output as untrusted input, ensuring deterministic and reliable CI pipeline behavior.
-	•	Attached AI-generated insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
+		Implemented validation, timeouts, and fallback logic to treat AI output as untrusted input, ensuring deterministic and reliable CI pipeline behavior.
+		Attached AI-generated insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.

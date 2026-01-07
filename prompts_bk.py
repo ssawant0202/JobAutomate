@@ -2,40 +2,8 @@ def get_prompt(job_description: str, my_resume: str , important_words:str) -> st
     
     prompt = f"""
 
-Based on the following job description and my resume experience, generate high-quality .tex file an output example is provided and make sure the bullet points are also optimize and in LaTeX format.
-Each bullet point should:
-- Replace the important_words:{important_words} and the stack they might use with the current significant words in my resume whereable applicable
-- From {important_words}, find all technical skills, soft skills and speciality and replace with the current section
-- Use a STAR approach (Situation, Task, Action, Result) to generate 4 points for each experience section
-- Be concise (About 60 words per bullet point).
-- Bold important keywords exactly as provided, using LaTeX's \\textbf{{}} syntax.
-- Use compelling action verbs and quantify results where possible.
-- Align with the responsibilities outlined in the job description.
-- Create a narrative for bullet points, avoid generic sentences use actual keywords like onboarding process or donations module etc.
-Each bullet point should use a STAR-style structure, and replace the current keywords to match the job description, be concise (max 50 words), and bold key skills and keywords exactly as provided. For Projects section keep the STAR-style structure point be concise (min 75 words)
-According to the job description rewrite my bullet points to make it 80% ATS compliant (Similar words found in the job description). Use my previous responses only as a reference. Make sure to output the updated bullet points of projects and experience in the Latex code example provided below.
-Focus on the company's values and integrate it with my resume for action verbs or just in general
-Just the Latex code nothing else because Im using the ouput to compile the code into a pdf. 3 Generated bullet points and 1 Original provided in the formatting.
+Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing bullet points that emphasize **how** value was delivered — not just what was done.
 
-- Rewrite each bullet point using the **STAR method** (Situation, Task, Action, Result).
-- Use my existing resume as a reference to generate relevant bullet points Dont make up random bullet points
-- The generated bullet points should be highly matching to the job description
-- **Prioritize the “how”**: Each bullet must explain how the outcome was achieved — the **tools, techniques, technical approaches, design decisions, or problem-solving steps** used.
-  - Examples of “how” phrasing to use: “by implementing...”, “through optimizing...”, “using X to solve Y...”, “leveraging A to refactor B...”, etc.
-- Include:
-  - **Technical depth** — specific stack, libraries, frameworks, optimization techniques, CI/CD tools, data handling approaches, etc.
-  - **Concrete action** — what you built, improved, or debugged and how you tackled it.
-  - **Quantified results** — latency reduced, costs saved, users onboarded, bugs fixed, etc.
-- Replace any keywords in `{important_words}` with matching terms already in my resume when possible.
-- For each experience:
-  - Generate **5 new bullet points** focused on “how”
-  - Use the content from my existing resume to generate new bullet points matching the job description
-- Each bullet must:
-  - Be **concise** (60–70 words)
-  - Use **bold LaTeX syntax** for important technologies and keywords: \\textbf{{example}}
-  - Avoid generic phrases — be specific and technically insightful
-
-  
 ------------------------------------------------------------
 **Job Description:**
 {job_description}
@@ -43,6 +11,60 @@ Just the Latex code nothing else because Im using the ouput to compile the code 
 ------------------------------------------------------------
 **Resume Experience:**
 {my_resume}
+
+------------------------------------------------------------
+**Important Words & Skills (from JD):**
+{important_words}
+
+------------------------------------------------------------
+**Instructions for Bullet Points:**
+
+CRITICAL CONSTRAINTS (DO NOT VIOLATE):
+- You can invent new responsibilities IF ABSOLUTELY NECESSARY TO get a ATS friendly result, tools, systems, or outcomes.
+- Every bullet point MUST be directly grounded in my existing resume content.
+- If a job description requirement is NOT supported by my resume, try to Mix my resume content with the job description
+- Prefer to rephrase, restructure, or emphasize what I have already done.
+
+INPUTS YOU WILL RECEIVE:
+1. My existing resume bullet points
+2. A job description.
+3. A list of important_words extracted from the job description.
+
+TASK:
+  - Rewrite each existing resume bullet using the STAR method that is ATS friendly and hihgly matches the Job description:
+  - Situation: inferred only from my resume context
+  - Task: what I was responsible for (from resume)
+  - Action: HOW I did it (tools, techniques, decisions explicitly present in resume)
+  - Result: outcomes that are already stated or reasonably implied (do NOT exaggerate)
+
+ALIGNMENT RULES:
+- Always Align language and emphasis to the job description with my resume.
+- If there is no overlap, Mix the and JD and my existing bullet point to force a highly ATS matching bullet point .
+
+
+KEYWORD RULES:
+- Replace keywords in {important_words} ONLY if an equivalent term already exists in my resume.
+
+
+OUTPUT REQUIREMENTS:
+- Generate exactly 5 rewritten bullets per experience.
+- Generate Skills matching to the job description and fill in *Insert Skill* in Skills section 
+- Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
+- Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
+- Quantify results ONLY if numbers already exist or can be conservatively inferred.
+- Each bullet: 60–70 words.
+- Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
+- Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
+
+### Output Requirements:
+- Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
+- Do **not** include any Markdown like triple backticks (```).
+- Escape all LaTeX-sensitive characters (`%`, `&`, '$' etc.) with a backslash.
+- Keep the LaTeX structure **exactly the same** as the provided example.
+- Replace only the `\\item` bullet point text.
+
+
+------------------------------------------------------------
 
 ------------------------------------------------------------
 **Output Format (Example):**
@@ -54,7 +76,7 @@ Just the Latex code nothing else because Im using the ouput to compile the code 
 \\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
 \\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
 \\name{{Siddhesh Sawant}}
-\\address{{+1(236) 867-1693 \\\\ Coquitlam, BC}}
+\\address{{+1(236) 867-1693 \\\\ Vancouver, BC}}
 \\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}}\\\\ 
 \\href{{https://www.linkedin.com/in/ssawant0202/}}{{linkedin.com}} \\\\ 
 \\href{{https://ssawant.netlify.app/}}{{Portfolio}}}}
@@ -63,80 +85,68 @@ Just the Latex code nothing else because Im using the ouput to compile the code 
 
 \\begin{{rSection}}{{Education}}
 {{\\bf Bachelor of Computer Engineering}}, Simon Fraser University \\hfill {{October 2024}}\\\\
-\\textbf{{Relevant Coursework}}: DSA, Computer Architecture, Testing, Modular code, Code quality, Computer Science
+\\textbf{{Relevant Coursework}}:  DSA, OOP, Web Development, Database, Android, UI/UX, Networking \\& Security, Digital Logic
 \\end{{rSection}}
 
 \\begin{{rSection}}{{SKILLS}}
 \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
-Technical Skills & Python, JAVA, REST APIs, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* \\\\   
-Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
-Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
+Technical Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,\\\\   
+Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*\\\\   
+Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,
 \\end{{tabular}}
 \\end{{rSection}}
 
 \\begin{{rSection}}{{EXPERIENCE}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2023 - Jan 2024\\\\
+\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2024 - Jan 2025\\\\
 New/Mode \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}
     \\item * Insert Chat GPT Generated Bullet point 1  *
     \\item * Insert Chat GPT Generated Bullet point 2  *
-    \\item Improved regression testing suites by writing \\textbf{{Unit Tests in Cypress}}, to optimize deployment time from 2 days to 4 hours and increasing system efficiency in an \\textbf{{Agile environment.}}
     \\item * Insert Chat GPT Generated Bullet point 3  *
+    \\item * Insert Chat GPT Generated Bullet point 4  *
+    \\item * Insert Chat GPT Generated Bullet point 5  *
+
 \\end{{itemize}}
 
-\\textbf{{Software Development Intern}} \\hfill Jan 2021 - Aug 2021\\\\
+\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2022 - Aug 2022\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}
-    \\item * Insert Chat GPT Generated Bullet point 4  *
-    \\item * Insert Chat GPT Generated Bullet point 5  *
-    \\item Collaborated with data scientists to innovate  \\textbf{{data segmentation}} techniques on CT, MRI, and retina scans \\textbf{{enhancing machine learning model accuracy by 10%}} through efficient data processing pipelines.
     \\item * Insert Chat GPT Generated Bullet point 6  *
+    \\item * Insert Chat GPT Generated Bullet point 7  *
+    \\item * Insert Chat GPT Generated Bullet point 8  *
+    \\item * Insert Chat GPT Generated Bullet point 9  *
+    \\item * Insert Chat GPT Generated Bullet point 10  *
+
 \\end{{itemize}}
 
 \\begin{{rSection}}{{PROJECTS}}
 
 \\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
 \\begin{{itemize}}
-    \\item Developed an issue tracker using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, achieving \\textbf{{8\\% speed improvement}} through \\textbf{{dynamic caching}}. Integrated \\textbf{{Google Authentication}} and \\textbf{{secure URL access}} for \\textbf{{data security}}. Deployed on \\textbf{{Vercel}}.
+    \\item Built and deployed a production-grade issue tracking system using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, implementing \\textbf{{Google OAuth}} authentication, role-based access control, and dynamic caching to improve request latency.
+Containerized application and test infrastructure using \\textbf{{Docker}} (separate dev/prod images, multi-stage builds) and orchestrated services with \\textbf{{Docker Compose}} for local and CI parity.
+Designed \\textbf{{end-to-end API automation}} with \\textbf{{pytest}} and integrated it into a \\textbf{{GitHub Actions CI/CD pipeline}}, including database-level assertions and regression gating on every commit.
 \\end{{itemize}}
 
-\\textbf{{Automated Chessboard}} \\href{{https://youtu.be/hdualDzNvGY}}{{(Video Demo)}}
+\\textbf{{AI-Powered Test Failure Triage}}
 \\begin{{itemize}}
-    \\item \\textbf{{Led a team of six}} to develop an \\textbf{{automated chessboard}} leveraging Python and the \\textbf{{Lichess API}} with \\textbf{{OAuthbased}} login. Designed and built the system, including UI for game initialization and detailed circuitry for seamless physical and digital gameplay integration.
-\\end{{itemize}}
 
+   \\item Integrated \\textbf{{ChatGPT API}} into a CI/CD workflow to automatically analyze failed \\textbf{{API and integration tests}}, generating structured summaries and root-cause classifications from test logs.
+    Implemented validation, timeouts, and fallback logic to treat AI output as \\textbf{{untrusted input}}, ensuring deterministic behavior in \\textbf{{CI pipelines}}.
+    Attached AI-generated insights directly to the \\textbf{{issue tracker}} to accelerate debugging and reduce mean time to resolution.
 \\end{{rSection}}
 
-\\begin{{rSection}}{{Certifications}}
-\\begin{{itemize}}
-   \\item \\textbf{{AWS}} Certified Solutions Architect - Associate, \\textbf{{Data Structures and Algorithms}}, \\textbf{{SQL}} Mastery
-\\end{{itemize}}
-\\end{{rSection}}
 
-\\begin{{rSection}}{{Leadership}}
-\\begin{{itemize}}
-   \\item \\textbf{{Founded}} a university \\textbf{{table tennis group}}, \\textbf{{organizing}} multiple \\textbf{{events}} that brought together many table tennis enthusiasts, \\textbf{{creating}} an \\textbf{{engaging community for players}} of all skill levels.
-
-\\end{{itemize}}
-
-
-\\end{{rSection}}
 \\end{{rSection}}
 \\end{{document}}
 
-### IMPORTANT POINT ###
-given my new/mode experience, if possible make up stuff but give me some bullet points stating how I added value to the company instead of saying what I did at the company ex, I used AWS lambda and saved 15000$ anually or I improved SQL queries by doing xyz that reduced the load and huge data retirival times by x seconds 
+
 ### OUTPUT FORMAT ###
 Use The exact same  LaTeX format resume just update the \\items (bullet points) nothing else so that the over structure remains the same.
 please do not add '```latex' above \\documentclass{{resume}} and '```' below \\end{{document}}
-if there is & or % sign in bullet points make sure to add backslash before it ex R\\&D
-
-Now, generate the bullet points in LaTeX format based on the above job description with matching keywords.
 """
     return prompt
-
-
 
