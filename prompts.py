@@ -20,9 +20,9 @@ Based on the following job description and my resume, generate a high-quality La
 **Instructions for Bullet Points:**
 
 CRITICAL CONSTRAINTS (DO NOT VIOLATE):
-- You can invent new responsibilities IF ABSOLUTELY NECESSARY TO get a ATS friendly result, tools, systems, or outcomes.
-- Every bullet point MUST be directly grounded in my existing resume content.
-- If a job description requirement is NOT supported by my resume, try to Mix my resume content with the job description
+- You can invent new responsibilities to get a ATS friendly result, tools, systems, or outcomes, but keep it minimal.
+- Every bullet point should be usually directly grounded in my existing resume content.
+- If critical job description requirements is NOT supported by my resume, mix my resume content with the job description but focus more on the JD
 - Prefer to rephrase, restructure, or emphasize what I have already done.
 
 INPUTS YOU WILL RECEIVE:
@@ -39,7 +39,7 @@ TASK:
 
 ALIGNMENT RULES:
 - Always Align language and emphasis to the job description with my resume.
-- If there is no overlap, Mix the and JD and my existing bullet point to force a highly ATS matching bullet point .
+- Mix the and JD and my existing bullet point to force a highly ATS matching bullet point .
 
 
 KEYWORD RULES:
@@ -53,7 +53,7 @@ OUTPUT REQUIREMENTS:
 - Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
 - Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
 - Quantify results ONLY if numbers already exist or can be conservatively inferred.
-- Each bullet: 60–70 words.
+- Each bullet: 65–75 words.
 - Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
 - Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
 
