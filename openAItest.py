@@ -19,8 +19,9 @@ def generate_latex_code(job_description: str, my_resume: str) -> str:
     keyword_prompt = keywords_prompts.get_prompt(job_description, my_resume)
 
     key_words_completion = client.chat.completions.create(
-        model="gpt-4-turbo",
-        # model="gpt-5.2",
+        # model="gpt-4-turbo",
+        model="gpt-5.2",
+
 
         messages=[
             {
@@ -37,8 +38,8 @@ def generate_latex_code(job_description: str, my_resume: str) -> str:
     user_prompt = prompts.get_prompt(job_description, my_resume, important_words)
 
     completion = client.chat.completions.create(
-        model="gpt-4-turbo",
-        # model="gpt-5.2",
+        # model="gpt-4-turbo",
+        model="gpt-5.2",
 
         messages=[
             {

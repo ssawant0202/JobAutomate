@@ -1,51 +1,74 @@
 def get_prompt(job_description: str, my_resume: str , important_words:str) -> str:
     
     prompt = f"""
+You are an expert ATS-focused resume writer specializing in SDET, Backend, and Platform/Cloud-adjacent roles.
 
+Your task is to rewrite my resume so that it strongly aligns with the target job description while remaining
+defensible, realistic, and grounded in my actual experience.
 Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing highly ATS-optimized with high keyword recall and semantic alignment bullet points that emphasize **how** value was delivered — not just what was done.
 
 ------------------------------------------------------------
-**Job Description:**
+JOB DESCRIPTION (PRIMARY SIGNAL – 80% EMPHASIS):
 {job_description}
 
 ------------------------------------------------------------
-**Resume Experience:**
+RESUME EXPERIENCE (SOURCE OF TRUTH – 20% EMPHASIS):
 {my_resume}
 
 ------------------------------------------------------------
-**Important Words & Skills (from JD):**
+IMPORTANT WORDS & SKILLS (FROM JD):
 {important_words}
 
 ------------------------------------------------------------
 **Instructions for Bullet Points:**
+OBJECTIVE:
 
-CRITICAL CONSTRAINTS (DO NOT VIOLATE):
-- You can invent new responsibilities to get a ATS friendly result, tools, systems, or outcomes, but keep it minimal.
-- Every bullet point should be usually directly grounded in my existing resume content.
-- If critical job description requirements is NOT supported by my resume, mix my resume content with the job description but focus more on the JD
-- Prefer to rephrase, restructure, or emphasize what I have already done.
+Generate a high-quality LaTeX `.tex` resume that is:
+- ATS-optimized with high keyword recall and semantic alignment
+- Framed primarily through the job description’s priorities and system context
+- Executed using my resume’s actual tools, workflows, and scope
 
-INPUTS YOU WILL RECEIVE:
-1. My existing resume bullet points
-2. A job description.
-3. A list of important_words extracted from the job description.
+Think of this as:
+→ “What I did, described as if it were performed in a system like the JD describes.”
 
-TASK:
-  - Rewrite each existing resume bullet using the STAR method that is ATS friendly and hihgly matches the Job description:
-  - Situation: inferred only from my resume context
-  - Task: what I was responsible for (from resume)
-  - Action: HOW I did it (tools, techniques, decisions explicitly present in resume)
-  - Result: QUANTIFY every outcome where ever possible 
+CONTROLLED FORGING RULES (READ CAREFULLY):
 
-ALIGNMENT RULES:
-- Always Align language and emphasis to the job description with my resume.
-- Mix the and JD and my existing bullet point to force a highly ATS matching bullet point .
+- You MAY lightly extend or generalize responsibilities to better match the job description,
+  BUT ONLY if they are a reasonable evolution of what appears in my resume.
+- You MUST NOT invent:
+  • entirely new tech stacks
+  • unrelated domains
+  • senior-level ownership I could not plausibly defend
+- Any added responsibility must be explainable as:
+  “I didn’t own this end-to-end, but I meaningfully contributed to it.”
 
+If a JD requirement is only partially supported by my resume:
+- Emphasize overlap
+- Abstract responsibility upward (system-level phrasing)
+- DO NOT fabricate deep ownership
 
-KEYWORD RULES:
-- Mostly try to Replace top critical keywords in {important_words} into my upcoming bullet point generation.
-- Try to Replace most critical keywords in {important_words} into my skills section respectively.
+BULLET REWRITE RULES (STAR-BASED, JD-FRAMED):
 
+Rewrite bullets using the STAR method with this emphasis:
+- Situation: inferred from the JOB DESCRIPTION’s environment (scale, reliability, CI/CD, cloud, etc.)
+- Task: mapped from my resume responsibilities
+- Action: HOW I executed the task, using tools and techniques present in my resume
+- Result: quantified where possible, otherwise conservatively inferred
+
+ALIGNMENT STRATEGY:
+- Target ~60% JD language and priorities, ~40% resume execution details
+- Prefer JD terminology when semantically equivalent to resume terms
+- Reframe existing work to highlight:
+  • system reliability
+  • automation impact
+  • CI/CD integration
+  • debugging and performance considerations
+
+KEYWORD STRATEGY:
+
+- Aggressively incorporate {important_words} into bullet points and skills
+- Replace keywords ONLY with semantically equivalent concepts already present or implied in my resume
+- Avoid raw keyword stuffing; prioritize natural technical phrasing
 
 OUTPUT REQUIREMENTS:
 - Generate exactly 5 rewritten bullets per experience.
@@ -53,7 +76,7 @@ OUTPUT REQUIREMENTS:
 - Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
 - Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
 - Quantify results ONLY if numbers already exist or can be conservatively inferred.
-- Each bullet: 65–75 words.
+- Each bullet: 25–30 words.
 - Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
 - Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
 
