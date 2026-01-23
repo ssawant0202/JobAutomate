@@ -1,235 +1,47 @@
-SIDDHESH SAWANT
-+1(236) 867- 1693 ⋄ Coquitlam, BC
-ssawant0202@gmail.com ⋄ linkedin.com ⋄ Portfolio
+Siddhesh Sawant
+2368671693 — Vancouver, BC
+ssawant0202@gmail.com — Linkedin — GitHub
 EDUCATION
-Bachelor of Computer Engineering, Simon Fraser University
-Relevant Coursework: DSA, Computer Architecture, Testing, Modular code, Code quality, Computer Science
+Bachelor of Applied Science in Computer Engineering (B.A.Sc.) — Simon Fraser University (SFU)
 SKILLS
-Technical Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*
-Soft Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
-Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill* 
-
-
-*additional experience bullet points*
-
-EXPERIENCE
-*Insert Job title from jobDescription* Jan 2024 - Jan 2025
+Technical Skills Expertise EXPERIENCE
+Python, Pytest, Selenium, Playwright, Docker, GitHub Actions, JMeter, Postman, Bash, AWS (RDS)
+API Automation (REST), CI/CD Pipelines, DB Validation (SQL), E2E & Shift-Left Testing, TestRail
+Software Development Engineer in Test (SDET) Jan 2024 - Jan 2025
 New/Mode Vancouver, BC
-
-
-Backend & API Quality Engineering
-	•	Designed and implemented end-to-end API test frameworks using pytest to validate REST endpoints, including authentication, authorization, error handling, and schema correctness
-	•	Built data-driven test suites with parametrization to cover edge cases, negative paths, and boundary conditions without duplicating logic
-	•	Validated API side effects at the database level by asserting persisted state, foreign key relationships, and transactional consistency
-	•	Diagnosed and fixed flaky API tests by isolating environment dependencies, timing issues, and shared test data conflicts
-	•	Built automated API test suites using pytest to validate REST endpoints end-to-end
-
-
-SQL Performance & Data Layer Optimization
-	•	Analyzed slow queries using EXPLAIN / EXPLAIN ANALYZE to understand execution plans and bottlenecks
-
-	•	Designed schemas with normalization and proper constraints to balance data integrity with query performance
-	•	Designed and queried relational schemas to validate API behavior and data integrity across CRUD operations
-	•	Wrote complex SELECT, JOIN, GROUP BY, and subqueries to verify backend state during automated API tests
-	•	Used SQL assertions inside test suites to confirm transactional correctness after API calls
-	•	Debugged data inconsistencies by tracing API requests to underlying database mutations
-	•	Applied normalization concepts and foreign key constraints to model realistic domain relationships
-
-
-Docker & Container Optimization
-
-	•	Used volume binds to synchronize source code between host and containers for rapid iteration
-	•	Ran application services and automated test containers in parallel using Docker Compose
-	•	Debugged container failures by inspecting logs, environment variables, and filesystem state via docker exec
-	•	Managed container networking and port mappings to enable service-to-service communication
-	•	minimal, secure, deterministic images in prod
-	•	Debugged container failures by inspecting filesystem state, environment variables, permissions, and runtime logs
-
-
-Docker Compose & Local Orchestration
-
-	•	Controlled startup order using service dependencies for reliable test execution
-	•	Isolated test environments to prevent state leakage between runs
-	•	Simulated production-like setups locally to catch integration issues early
-	•	Simulated production-like environments locally to surface integration issues early
- 	• 	Refactored Dockerfiles and reduced image size by 60% for Spring Boot microservices, enabling parallel container
- 		deployment and reducing startup time by 25%
-
-
-CI/CD Engineering (GitHub Actions)
-
-	•	Implemented environment-specific configuration (dev/test) using secrets and environment variables
-	•	Debugged CI failures by correlating pipeline logs, container output, and local reproduction
-	•	Designed CI pipelines to automatically build containers, start services, and execute API tests on every push
-	•	Integrated Docker Compose into CI workflows to mirror local development environments
-	•	Configured environment variables and secrets securely for CI test execution
-	•	Implemented failure gating so regressions block merges
-	•	Debugged CI failures by analyzing logs, reproducing issues locally, and fixing environment mismatches
-
- 	• 	Built CI pipelines in CircleCI to automate integration and regression testing, while setting up AWS CloudWatch alerts
- 		and log aggregation, leading to a 40% reduction in unplanned downtime.
-
-Performance & Load Testing
-	•	Designed and executed API-level performance tests to evaluate system behavior under concurrent load
-	•	Identified bottlenecks caused by:
-	•	inefficient SQL queries
-	•	database contention
-
-
-Microservices Architecture & Debugging
-	•	Debugged failures across API, database, container, and CI layers end-to-end
-	•	Identified root causes instead of symptom-level fixes
-	•	Compared local vs CI behavior to uncover environment-specific issues
-	•	Applied structured troubleshooting instead of trial-and-error fixes
-
-Observability: Logging, Metrics & Monitoring
-
-	•	Added request correlation identifiers to trace individual requests through services
-	•	Instrumented basic metrics (latency, error rates, throughput) for performance visibility
-	•	Used Prometheus/Grafana concepts to reason about system health and performance trends
-
-
-Linux & Runtime Debugging
-
-	•	Diagnosed port conflicts, permission issues, and environment variable misconfigurations
-	•	Applied Linux knowledge directly in Docker and CI contexts
-
-	•	Diagnosed port conflicts, permission issues, and misconfigured environment variables inside containers and CI runners
-
-
-Test Strategy & Engineering Judgment
-
-	•	Avoided over-testing by focusing on high-risk system boundaries
-	•	Designed tests to be deterministic, repeatable, and fast enough for CI
-	•	Balanced test coverage with pipeline execution time
-
-	•	Made explicit tradeoffs between test depth and pipeline execution time
-
-
-Production-Ready Engineering Mindset
-
-	•	Designed workflows to scale from local development → CI → container orchestration
-
-
-Foundational Cloud / Deployment Readiness
-
-	•	Prepared application for future orchestration (Kubernetes-ready architecture)
-
-
-AI Integration Readiness (Controlled, Non-Hype)
-	•	Integrated AI as a bounded backend dependency with validation, timeouts, and fallbacks
-
-	•	Designed AI-assisted features to degrade gracefully when unavailable
-
- 
-
-
-
-*Insert Job title from jobDescription* Jan 2022 - Aug 2022
+• Designed and maintained scalable API and integration test frameworks in Python (Pytest) for RESTful services,
+applying shift-left testing principles with fixtures, and layered assertions to validate authentication, error handling,
+and edge cases, reducing regression escapes by 45%
+• Implemented API automation with database-level validation using REST assertions and SQL queries to verify side
+effects and transactional correctness, collaborating with backend engineers to identify inefficiencies that contributed to a
+30% reduction in API latency
+• Containerized test environments using Docker and Docker Compose, creating isolated, reproducible stacks for
+microservices and databases, which reduced environment-related CI failures by 50% and improved local-to-CI parity
+• Built and optimized CI/CD pipelines in GitHub Actions, integrating containerized test execution, regression gating,
+and environment-specific configuration, preventing unstable merges and reducing deployment-blocking failures by 40%
+• Modified and extended Bash scripts to automate test setup, configurations, and log collection within CI, while
+documenting workflows and failure triage steps in Confluence, improving debugging and shortening release cycles by 30%
+QA Automation Engineer Jan 2022 - Aug 2022
 Faisal Labs Vancouver, BC
-Backend & API Quality Engineering
-
-	•	Implemented positive, negative, and edge-case scenarios with parameterized tests
-	•	Validated response payloads, status codes, headers, and schema consistency
-	•	Used test data setup and teardown to ensure isolation and repeatability
-	•	Integrated database assertions to verify API side effects beyond HTTP responses
-	•	Diagnosed flaky tests by isolating environment, timing, and data-dependency issues
-
-
-SQL Performance & Data Layer Optimization
-	•	Optimized query performance by:
-	•	introducing targeted single-column and composite indexes
-	•	restructuring joins to avoid unnecessary table scans
-	•	eliminating N+1 query patterns in API workflows
-	•	Measured and validated improvements using before/after latency benchmarks at the API level
-
-Docker & Container Optimization
-	•	Dockerized backend services and test suites with clean, minimal images tailored for each responsibility
-	•	Reduced Docker image size by:
-	•	using multi-stage builds
-	•	separating build-time and runtime dependencies
-	•	shipping static production artifacts only in final images
-	•	Authored separate Dockerfiles for development and production, enabling:
-	•	hot-reloading and debugging in dev
-	•	Dockerized backend services and API test suites into isolated, reproducible containers
-
-Docker Compose & Local Orchestration
-	•	Built multi-service Docker Compose setups to orchestrate application, database, and test services
-	•	Controlled startup sequencing and health checks to ensure reliable integration testing
-	•	Used volume bindings for rapid local iteration while preserving container isolation
-	•	Defined multi-service Docker Compose configurations to orchestrate app, database, and test services
-
-
-CI/CD Engineering (GitHub Actions)
-	•	Designed CI pipelines that:
-	•	build container images
-	•	spin up full application stacks
-	•	execute automated API tests
-	•	block merges on regression failures
-	•	Integrated Docker Compose into CI to ensure parity between local and pipeline environments
-
-
-Performance & Load Testing
-
-	•	synchronous blocking calls in request paths
-	•	Validated system degradation patterns and ensured graceful failure rather than hard crashes
-	•	Used performance data to guide targeted optimizations instead of premature tuning
-
-Microservices Architecture & Debugging
-	•	Structured services to support clear API boundaries and independent deployment
-	•	Debugged cross-service failures by tracing request flow across containers and services
-	•	Diagnosed issues related to:
-	•	service-to-service networking
-	•	environment mismatches
-	•	configuration drift between services
-	•	Debugged failures across API, database, container, and CI layers end-to-end
-
-
-Observability: Logging, Metrics & Monitoring
-	•	Implemented structured logging with consistent log levels to support debugging across environments
-
-
-Linux & Runtime Debugging
-	•	Navigated Linux environments to inspect logs, processes, ports, and environment variables
-	•	Debugged runtime issues using tools such as curl, lsof, ps, env, and tail -f
-	•	Navigated Linux environments confidently to inspect logs, processes, and file systems inside containers
-	•	Used command-line tools (curl, ps, lsof, env, tail) to debug API and service issues
-
-Test Strategy & Engineering Judgment
-	•	Designed test strategies that balance coverage, speed, and reliability
-	•	Prioritized high-risk integration points instead of over-testing trivial logic
-	•	Ensured tests were deterministic, isolated, and CI-friendly
-	•	Distinguished between unit-level, integration-level, and end-to-end tests
-
-
-Production-Ready Engineering Mindset
-	•	Built systems with environment-agnostic configuration and reproducible builds
-	•	Designed workflows to scale from local development → CI → container orchestration
-	•	Treated failures as signals to improve system design, not one-off fixes
-
-
-Foundational Cloud / Deployment Readiness
-	•	Built systems with environment-agnostic configuration (env vars, containers)
-
-
-
- AI Integration Readiness 
-
-	•	Treated AI output as untrusted input, enforcing schema and sanity checks
-
- 	• 	Automated end-to-end and regression test coverage using Cypress and custom fixtures, identifying 10+ critical
- 		bugs early and reducing manual QA effort by 80%, which cut deployment cycles from 2 days to 4 hours
-
-
+• Executed manual smoke, UAT, and regression testing by authoring structured test cases in TestRail and validating
+end-to-end user workflows before each release, reducing production defects by 30% and enabling faster deployment approvals
+• Developed automated end-to-end test suites using Cypress, implementing reusable selectors, fixtures, and environment-
+specific configs, which reduced repetitive manual regression effort by 40% and improved test reliability across releases
+• Performed backend data validation using SQL by writing JOIN-based queries and integrity checks to verify database
+state after UI and API actions, identifying data inconsistencies early and lowering post-release data issues by 25%
+• Executed performance and load testing on critical application flows using Apache JMeter, analyzing response times
+and error rates to identify inefficiencies, leading to targeted fixes that improved system response times by 25%
+• Authored and maintained test documentation in Confluence, including regression checklists, test plans, and
+release validation procedures, improving cross-team clarity and reducing onboarding and handoff friction by 20%
 PROJECTS
 Smart Issue Tracker (Website)
-Website: https://issue-tracker-kappa-nine.vercel.app/
-	•	Built and deployed a production-grade issue tracking system using Next.js, Radix UI, and AWS RDS, implementing Google OAuth authentication, role-based access control, and dynamic caching to improve request latency. 
-        Containerized the application and test infrastructure using Docker (separate dev/prod images, multi-stage builds) and orchestrated services with Docker Compose to maintain parity between local development and CI environments. 
-        Designed end-to-end API automation using pytest and integrated it into a GitHub Actions CI/CD pipeline, including database-level assertions and regression gating on every commit.
-
+• Built and deployed a production-grade issue tracking system using Next.js, Radix UI, and AWS RDS, implementing
+Google OAuth authentication, role-based access control, and dynamic caching to improve request latency. Containerized
+application and test infrastructure using Docker (separate dev/prod images, multi-stage builds) and orchestrated services
+with Docker Compose for local and CI parity. Designed end-to-end API automation with pytest and integrated it
+into a GitHub Actions CI/CD pipeline, including database-level assertions and regression gating on every commit.
 AI-Powered Test Failure Triage
-
-	•	Integrated the ChatGPT API into a CI/CD workflow to automatically analyze failed API and integration tests, generating structured summaries and root-cause classifications from test logs.
-		Implemented validation, timeouts, and fallback logic to treat AI output as untrusted input, ensuring deterministic and reliable CI pipeline behavior.
-		Attached AI-generated insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
+• Integrated OpenAI API into a CI/CD workflow to assist in analyzing failed API and integration tests, generating
+structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback logic to
+treat AI output as untrusted input, ensuring deterministic behavior in CI pipelines. Attached AI-generated insights
+directly to the issue tracker to accelerate debugging and reduce mean time to resolution.

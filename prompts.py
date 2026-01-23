@@ -3,16 +3,15 @@ def get_prompt(job_description: str, my_resume: str , important_words:str) -> st
     prompt = f"""
 You are an expert ATS-focused resume writer specializing in SDET, Backend, and Platform/Cloud-adjacent roles.
 
-Your task is to rewrite my resume so that it strongly aligns with the target job description while remaining
-defensible, realistic, and grounded in my actual experience.
+Your task is to rewrite my resume so that it strongly aligns with the target job description while keeping it relevant to my actual experience.
 Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing highly ATS-optimized with high keyword recall and semantic alignment bullet points that emphasize **how** value was delivered — not just what was done.
 
 ------------------------------------------------------------
-JOB DESCRIPTION (PRIMARY SIGNAL – 80% EMPHASIS):
+JOB DESCRIPTION (PRIMARY SIGNAL – 60% EMPHASIS):
 {job_description}
 
 ------------------------------------------------------------
-RESUME EXPERIENCE (SOURCE OF TRUTH – 20% EMPHASIS):
+RESUME EXPERIENCE (SOURCE OF TRUTH – 40% EMPHASIS):
 {my_resume}
 
 ------------------------------------------------------------
@@ -33,7 +32,7 @@ Think of this as:
 
 CONTROLLED FORGING RULES (READ CAREFULLY):
 
-- You MAY lightly extend or generalize responsibilities to better match the job description,
+- You MUST extend or generalize responsibilities to better match the job description,
   BUT ONLY if they are a reasonable evolution of what appears in my resume.
 - You MUST NOT invent:
   • entirely new tech stacks
@@ -45,7 +44,7 @@ CONTROLLED FORGING RULES (READ CAREFULLY):
 If a JD requirement is only partially supported by my resume:
 - Emphasize overlap
 - Abstract responsibility upward (system-level phrasing)
-- DO NOT fabricate deep ownership
+
 
 BULLET REWRITE RULES (STAR-BASED, JD-FRAMED):
 
@@ -53,7 +52,7 @@ Rewrite bullets using the STAR method with this emphasis:
 - Situation: inferred from the JOB DESCRIPTION’s environment (scale, reliability, CI/CD, cloud, etc.)
 - Task: mapped from my resume responsibilities
 - Action: HOW I executed the task, using tools and techniques present in my resume
-- Result: quantified where possible, otherwise conservatively inferred
+- Result: quantified usually everywhere, otherwise conservatively inferred
 
 ALIGNMENT STRATEGY:
 - Target ~60% JD language and priorities, ~40% resume execution details
@@ -62,13 +61,93 @@ ALIGNMENT STRATEGY:
   • system reliability
   • automation impact
   • CI/CD integration
+  • Docker
+  • API Testing Pytest
   • debugging and performance considerations
 
 KEYWORD STRATEGY:
 
 - Aggressively incorporate {important_words} into bullet points and skills
-- Replace keywords ONLY with semantically equivalent concepts already present or implied in my resume
 - Avoid raw keyword stuffing; prioritize natural technical phrasing
+
+HIGH HIRING SIGNAL ENFORCEMENT (CRITICAL):
+
+Every bullet MUST strongly signal at least ONE of the following:
+- Ownership of test quality or reliability outcomes
+- System-level thinking (not task execution)
+- Automation maturity beyond basic scripting
+- CI/CD quality gating or release impact
+- API correctness, data integrity, or regression prevention
+- Scalability, maintainability, or test architecture decisions
+- Cross-team engineering influence (backend, infra, DevOps)
+
+GENERIC QA LANGUAGE IS NOT ALLOWED.
+
+--------------------------------
+
+SDET ROLE FRAMING (MANDATORY):
+
+All experience must be framed as:
+- A Software Development Engineer in Test (SDET)
+- A quality gatekeeper, not a passive tester
+- An engineer influencing release confidence and system stability
+
+CI/CD work must be framed as:
+- Regression gating
+- Release blocking
+- Quality enforcement
+- Failure prevention
+NOT merely “pipeline setup”.
+
+--------------------------------
+
+ARCHITECTURAL JUSTIFICATION RULE:
+
+If a bullet claims:
+- scalable
+- robust
+- modular
+- reusable
+- maintainable
+- extensible
+
+You MUST justify it with HOW, such as:
+- layered test architecture
+- reusable pytest fixtures
+- parametrization strategies
+- environment-based configuration
+- containerized test execution
+- DB-level validation
+- deterministic assertions
+- failure isolation strategies
+
+--------------------------------
+
+ENGINEERING BULLET STRUCTURE (ENFORCED):
+
+Each bullet MUST implicitly follow:
+Action → System/Mechanism → Engineering Method → Validation Strategy → Impact
+
+--------------------------------
+
+FAIL CONDITIONS (AUTO-REJECT):
+
+The output is INVALID if any bullet:
+- Sounds like manual QA
+- Lacks HOW details
+- Uses vague impact statements
+- Claims senior ownership without defensible scope
+- Mentions tools not present in the resume
+- Uses filler phrases (“worked on”, “helped”, “responsible for”)
+
+--------------------------------
+
+SCORING OBJECTIVE (INTERNAL):
+
+Write bullets that would score ≥9/10 if evaluated by:
+- A senior SDET interviewer
+- A backend engineer reviewing test credibility
+- An ATS parsing for SDET keywords
 
 OUTPUT REQUIREMENTS:
 - Generate exactly 5 rewritten bullets per experience.
@@ -76,7 +155,7 @@ OUTPUT REQUIREMENTS:
 - Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
 - Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
 - Quantify results ONLY if numbers already exist or can be conservatively inferred.
-- Each bullet: 25–30 words.
+- Each bullet: 60–70 words.
 - Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
 - Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
 
@@ -175,4 +254,3 @@ Use The exact same  LaTeX format resume just update the \\items (bullet points) 
 please do not add '```latex' above \\documentclass{{resume}} and '```' below \\end{{document}}
 """
     return prompt
-
