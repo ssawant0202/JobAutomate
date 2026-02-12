@@ -62,23 +62,3 @@ AI-Powered Test Failure Triage
 structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback logic to
 treat AI output as untrusted input, ensuring deterministic behavior in CI pipelines. Attached AI-generated insights
 directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
-
-my_resume_keywords:
-To optimize your resume for the Manual QA Analyst position at Aquanow, we need to focus on integrating specific keywords relevant to the responsibilities and qualifications outlined in the job description. Here's a breakdown:
-
-**Job Title:**
-- Manual QA Analyst
-
-**Tech Stack Keywords and Relevant Skills:**
-1. **Manual Testing** - Since the title itself is Manual QA Analyst, this emphasizes the need for direct experience with manual testing methods.
-2. **Test Plans and Test Cases** - The job involves developing and executing detailed test plans and test cases, so these terms should be prominently featured.
-3. **Frontend and Backend Testing** - You'll need to validate both frontend and backend functionalities, so include experiences related to both aspects.
-4. **JIRA/TestRail** - Mention any experience you have with these or similar tools since they're specifically mentioned as part of the role for tracking defects and managing tests.
-5. **Agile Methodologies** - Experience in Agile environments is essential as indicated by the requirement to participate in sprint planning and daily stand-ups.
-6. **Functional, Regression, and Exploratory Testing** - These testing types are listed as key activities in the role, so your experience in these areas should be evident.
-7. **Cryptocurrency/Blockchain** - Any background or interest in digital payment, financial services, or cryptocurrencies will be beneficial, so if relevant, it should be included.
-8. **Defect Documentation and Tracking** - The ability to document and track defects effectively is crucial, aligning with your responsibilities in the role.
-9. **QA Tools** - Mention specific QA tools you are skilled with, especially if they align with those used by Aquanow.
-10. **Cross-functional Teams** - Experience working within cross-functional teams reflects the collaborative environment at Aquanow.
-
-Ensure these keywords and skills are incorporated naturally within the context of your professional experiences and responsibilities in your resume to make it both human and ATS-friendly. This strategic emphasis will highlight your capability and readiness for the responsibilities outlined in the job description.

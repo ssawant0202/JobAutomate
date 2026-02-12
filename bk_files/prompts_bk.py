@@ -34,7 +34,12 @@ CONTROLLED FORGING RULES (READ CAREFULLY):
 
 - You MUST extend or generalize responsibilities to better match the job description,
   BUT ONLY if they are a reasonable evolution of what appears in my resume.
-
+- You MUST NOT invent:
+  • entirely new tech stacks
+  • unrelated domains
+  • senior-level ownership I could not plausibly defend
+- Any added responsibility must be explainable as:
+  “I didn’t own this end-to-end, but I meaningfully contributed to it.”
 
 If a JD requirement is only partially supported by my resume:
 - Emphasize overlap
@@ -62,7 +67,7 @@ ALIGNMENT STRATEGY:
 
 KEYWORD STRATEGY:
 
-- MUST Aggressively incorporate {important_words} into bullet points and skills
+- Aggressively incorporate {important_words} into bullet points and skills
 - Avoid raw keyword stuffing; prioritize natural technical phrasing
 
 HIGH HIRING SIGNAL ENFORCEMENT (CRITICAL):
@@ -153,7 +158,6 @@ OUTPUT REQUIREMENTS:
 - Each bullet: 60–70 words.
 - Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
 - Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
-- Quantify results wherever possible 
 
 ### Output Requirements:
 - Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
@@ -175,15 +179,16 @@ OUTPUT REQUIREMENTS:
 \\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
 \\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
 \\name{{Siddhesh Sawant}}
-\\address{{2368671693 | Vancouver, BC}}
-\\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}} | 
-\\href{{https://www.linkedin.com/in/ssawant0202}}{{Linkedin}} | 
-\\href{{https://github.com/ssawant0202}}{{GitHub}}}}
+\\address{{+1(236) 867-1693 \\\\ Vancouver, BC}}
+\\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}}\\\\ 
+\\href{{https://www.linkedin.com/in/ssawant0202/}}{{linkedin.com}} \\\\ 
+\\href{{https://ssawant.netlify.app/}}{{Portfolio}}}}
 
 \\begin{{document}}
 
 \\begin{{rSection}}{{Education}}
-{{\\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
+{{\\bf Bachelor of Computer Engineering}}, Simon Fraser University \\hfill {{October 2024}}\\\\
+\\textbf{{Relevant Coursework}}:  DSA, OOP, Web Development, Database, Android, UI/UX, Networking \\& Security, Digital Logic
 \\end{{rSection}}
 
 \\begin{{rSection}}{{SKILLS}}
@@ -208,7 +213,7 @@ New/Mode \\hfill \\textit{{Vancouver, BC}}
 
 \\end{{itemize}}
 
-\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2023 - Aug 2023\\\\
+\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2022 - Aug 2022\\\\
 Faisal Labs \\hfill \\textit{{Vancouver, BC}}
 
 \\begin{{itemize}}

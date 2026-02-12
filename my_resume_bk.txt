@@ -233,3 +233,9 @@ AI-Powered Test Failure Triage
 	•	Integrated the ChatGPT API into a CI/CD workflow to automatically analyze failed API and integration tests, generating structured summaries and root-cause classifications from test logs.
 		Implemented validation, timeouts, and fallback logic to treat AI output as untrusted input, ensuring deterministic and reliable CI pipeline behavior.
 		Attached AI-generated insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
+
+
+
+
+
+
