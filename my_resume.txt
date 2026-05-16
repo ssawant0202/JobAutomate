@@ -64,17 +64,18 @@ treat AI output as untrusted input, ensuring deterministic behavior in CI pipeli
 directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-**Job Title:**
-Quality Assurance Automation Engineer
+**Job Title:** Mobile Application Developer
 
-**Tech Stack Keywords for ATS Compliance:**
-1. Playwright / Cypress
-2. Automation Testing
-3. CI/CD Integration
-4. API & Data Validation
-5. Performance Testing
-6. Salesforce
-7. Agile/Scrum Methodologies
-8. TestRail / JIRA
-9. Defect Management
-10. Test Environment Management
+**Tech Stack Keywords:**
+1. **iOS/Android** - Emphasize your experience developing on both platforms, mentioning any specific projects where you utilized iOS and Android development skills.
+2. **React Native/Flutter** - Highlight your proficiency with either of these cross-platform frameworks, along with any relevant projects.
+3. **Swift/Kotlin** - If you have experience in native app development, mention your skills in these languages as they correspond to the job requirements.
+4. **Node.js** - Detail your backend development experience using Node.js, focusing on your ability to build and maintain RESTful API integrations.
+5. **JavaScript/TypeScript** - Make sure your resume reflects your skills in these languages, particularly in contexts related to mobile and backend development.
+6. **RESTful APIs** - Point out projects or tasks where you've successfully integrated or developed APIs.
+7. **AWS/Firebase** - Mention any experience using cloud services for mobile development, especially AWS or Firebase.
+8. **PostgreSQL/MongoDB** - Include instances where you've worked with these databases in the context of mobile app development.
+9. **Git** - Discuss your proficiency in version control, citing how it contributed to mobile development projects.
+10. **CI/CD pipelines** - Describe your experiences setting up and maintaining continuous integration and continuous delivery pipelines, focusing on mobile app deployment.
+
+By integrating these keywords into your resume, often in the context of your accomplishments or specific projects, you can achieve a high degree of alignment with the job description and improve ATS compliance.
