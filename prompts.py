@@ -47,7 +47,7 @@ Rewrite bullets using the STAR method with this emphasis:
 - Situation: inferred from the JOB DESCRIPTION’s environment (scale, reliability, CI/CD, cloud, etc.)
 - Task: mapped from my resume responsibilities
 - Action: HOW I executed the task, using tools and techniques present in my resume
-- Result: quantified usually everywhere, otherwise conservatively inferred
+- Result: quantified mostly everywhere, otherwise conservatively inferred
 
 ALIGNMENT STRATEGY:
 - Target ~60% JD language and priorities, ~40% resume execution details
@@ -153,7 +153,7 @@ OUTPUT REQUIREMENTS:
 - Each bullet: 60–70 words.
 - Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
 - Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
-- Quantify results wherever possible 
+- Quantify results everywhere
 
 ### Output Requirements:
 - Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`

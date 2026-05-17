@@ -64,18 +64,22 @@ treat AI output as untrusted input, ensuring deterministic behavior in CI pipeli
 directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-**Job Title:** Mobile Application Developer
+### Job Title
+Software Validation and Verification Engineer
 
-**Tech Stack Keywords:**
-1. **iOS/Android** - Emphasize your experience developing on both platforms, mentioning any specific projects where you utilized iOS and Android development skills.
-2. **React Native/Flutter** - Highlight your proficiency with either of these cross-platform frameworks, along with any relevant projects.
-3. **Swift/Kotlin** - If you have experience in native app development, mention your skills in these languages as they correspond to the job requirements.
-4. **Node.js** - Detail your backend development experience using Node.js, focusing on your ability to build and maintain RESTful API integrations.
-5. **JavaScript/TypeScript** - Make sure your resume reflects your skills in these languages, particularly in contexts related to mobile and backend development.
-6. **RESTful APIs** - Point out projects or tasks where you've successfully integrated or developed APIs.
-7. **AWS/Firebase** - Mention any experience using cloud services for mobile development, especially AWS or Firebase.
-8. **PostgreSQL/MongoDB** - Include instances where you've worked with these databases in the context of mobile app development.
-9. **Git** - Discuss your proficiency in version control, citing how it contributed to mobile development projects.
-10. **CI/CD pipelines** - Describe your experiences setting up and maintaining continuous integration and continuous delivery pipelines, focusing on mobile app deployment.
+### Tech Stack Keywords (8-10 Keywords)
+1. **Software Verification and Validation** – Highlighting hands-on experience and understanding in V&V processes.
+2. **Software Test Automation** – Focus on experience with automated testing frameworks and tools for streamlined testing processes.
+3. **IEC 60601** – Mention familiarity or experience working with this specific international standard for medical devices, if applicable.
+4. **IEC 62304** – Knowledge of the process lifecycle for medical device software.
+5. **Java** – Proficiency in Java, particularly in the context of test automation or validation testing.
+6. **Python** – Proficiency in Python or similar scripting languages tailored toward automation or process scripting.
+7. **Drafting Test Protocols and Reports** – Capability to create comprehensive documents for regulatory purposes or internal use.
+8. **Cybersecurity** – Understanding of cybersecurity measures and implementations, especially in the context of medical device software.
+9. **Medical Device Software Standards** – Knowledge of the regulatory environment and standards that govern medical software development and maintenance.
+10. **Independent Quality Verification** – Demonstrated ability to lead or significantly contribute to the quality verification process in a multidisciplinary team setting, reflecting skills to work independently.
 
-By integrating these keywords into your resume, often in the context of your accomplishments or specific projects, you can achieve a high degree of alignment with the job description and improve ATS compliance.
+### Tips for Integration into Resume
+- When revising your resume, introduce cases where you've employed these technologies or standards within your work history. 
+- Use the keywords strategically in the descriptions of your past job roles or projects, especially where they had a significant impact or brought about improvements or compliance.
+- Tailor your professional summary or opening statement to echo essential responsibilities from the job description, using the keywords to reinforce your suitability for the role.
