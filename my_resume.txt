@@ -42,7 +42,7 @@ New/Mode Vancouver, BC
     * Insert Chat GPT Generated Bullet point 4  *
     * Insert Chat GPT Generated Bullet point 5  *
 
-QA Automation Engineer Jan 2022 - Aug 2022
+QA Automation Engineer Jan 2023 - Aug 2023
 Faisal Labs Vancouver, BC
     * Insert Chat GPT Generated Bullet point 1  *
     * Insert Chat GPT Generated Bullet point 2  *
@@ -64,22 +64,20 @@ treat AI output as untrusted input, ensuring deterministic behavior in CI pipeli
 directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-### Job Title
-Software Validation and Verification Engineer
+From the provided job description, we can derive a comprehensive and tailored approach to ensure your resume is ATS-compliant, targeting the specific needs of the role. Here’s the analysis based on the job responsibilities and qualifications sections.
 
-### Tech Stack Keywords (8-10 Keywords)
-1. **Software Verification and Validation** – Highlighting hands-on experience and understanding in V&V processes.
-2. **Software Test Automation** – Focus on experience with automated testing frameworks and tools for streamlined testing processes.
-3. **IEC 60601** – Mention familiarity or experience working with this specific international standard for medical devices, if applicable.
-4. **IEC 62304** – Knowledge of the process lifecycle for medical device software.
-5. **Java** – Proficiency in Java, particularly in the context of test automation or validation testing.
-6. **Python** – Proficiency in Python or similar scripting languages tailored toward automation or process scripting.
-7. **Drafting Test Protocols and Reports** – Capability to create comprehensive documents for regulatory purposes or internal use.
-8. **Cybersecurity** – Understanding of cybersecurity measures and implementations, especially in the context of medical device software.
-9. **Medical Device Software Standards** – Knowledge of the regulatory environment and standards that govern medical software development and maintenance.
-10. **Independent Quality Verification** – Demonstrated ability to lead or significantly contribute to the quality verification process in a multidisciplinary team setting, reflecting skills to work independently.
+**Job Title**: Since the job title isn't explicitly mentioned in the description you provided, based on the responsibilities and required skills, it could likely be titled something akin to "Software Verification and Validation Engineer" or "Software Test Automation Engineer."
 
-### Tips for Integration into Resume
-- When revising your resume, introduce cases where you've employed these technologies or standards within your work history. 
-- Use the keywords strategically in the descriptions of your past job roles or projects, especially where they had a significant impact or brought about improvements or compliance.
-- Tailor your professional summary or opening statement to echo essential responsibilities from the job description, using the keywords to reinforce your suitability for the role.
+**Tech Stack Keywords and Related Terms (8-10)**:
+1. **Software Verification and Validation (V&V) Testing** - Focuses on your experience in creating and executing verification and validation tests for software and systems.
+2. **Test Automation** - Highlight your skills and experience with automating tests, including any specific tools or frameworks you've used (e.g., Selenium, Jenkins).
+3. **Java/Python** - Based on the skills preferred; if you have experience in these or other scripting languages, cite your proficiency.
+4. **Medical Device Regulations** - You should reference knowledge or experience with relevant standards like IEC 60601 and IEC 62304.
+5. **Test Protocols and Reports** - Show your capability in drafting test plans and reports, particularly within regulated environments.
+6. **Cybersecurity Guidelines** - Mention any experience with cybersecurity practices relevant to software testing or medical devices.
+7. **Systems Verification** - State experiences related directly to systems-level verification, aligning with creating strategies for in-house systems.
+8. **Specification Writing** - Your ability to write well-defined specifications that aid in designing and verifying software complies with functional requirements.
+9. **Problem-Solving** - Experience in identifying, analyzing, and resolving software defects and issues.
+10. **Independent Worker** - Demonstrate your capability to work autonomously and in multi-disciplinary teams within complex project scopes.
+
+Incorporate these keywords strategically within your resume, ideally in a manner that matches the responsibilities outlined in the job description. Tailor your experiences, qualifications, and skills to reflect these keywords, and ensure they are backed by concrete examples or metrics that underscore your proficiency and achievements in these areas.
