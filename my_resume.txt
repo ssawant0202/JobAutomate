@@ -64,20 +64,21 @@ treat AI output as untrusted input, ensuring deterministic behavior in CI pipeli
 directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-From the provided job description, we can derive a comprehensive and tailored approach to ensure your resume is ATS-compliant, targeting the specific needs of the role. Here’s the analysis based on the job responsibilities and qualifications sections.
+Based on the job description provided, here are the details and keywords that are essential to optimize your resume for this Junior QA Engineer position to achieve high ATS compliance:
 
-**Job Title**: Since the job title isn't explicitly mentioned in the description you provided, based on the responsibilities and required skills, it could likely be titled something akin to "Software Verification and Validation Engineer" or "Software Test Automation Engineer."
+**Job Title:**
+Junior QA Engineer
 
-**Tech Stack Keywords and Related Terms (8-10)**:
-1. **Software Verification and Validation (V&V) Testing** - Focuses on your experience in creating and executing verification and validation tests for software and systems.
-2. **Test Automation** - Highlight your skills and experience with automating tests, including any specific tools or frameworks you've used (e.g., Selenium, Jenkins).
-3. **Java/Python** - Based on the skills preferred; if you have experience in these or other scripting languages, cite your proficiency.
-4. **Medical Device Regulations** - You should reference knowledge or experience with relevant standards like IEC 60601 and IEC 62304.
-5. **Test Protocols and Reports** - Show your capability in drafting test plans and reports, particularly within regulated environments.
-6. **Cybersecurity Guidelines** - Mention any experience with cybersecurity practices relevant to software testing or medical devices.
-7. **Systems Verification** - State experiences related directly to systems-level verification, aligning with creating strategies for in-house systems.
-8. **Specification Writing** - Your ability to write well-defined specifications that aid in designing and verifying software complies with functional requirements.
-9. **Problem-Solving** - Experience in identifying, analyzing, and resolving software defects and issues.
-10. **Independent Worker** - Demonstrate your capability to work autonomously and in multi-disciplinary teams within complex project scopes.
+**Tech Stack Keywords:**
+1. **Automated testing systems** - Mention any experience with automation tools or frameworks.
+2. **Linux/Unix** - Highlight experience and proficiency with these operating systems.
+3. **TCP/IP, SNMP** - If you have networking experience, including specific protocols mentioned.
+4. **TLS, PKI, Encryption** - Detail any security practices or protocols you've worked with.
+5. **Scripting languages (Shell, Python)** - Specify scripting languages you are proficient in, especially those listed.
+6. **Bug triage** - Show experience with bug identification, documentation, and resolution processes.
+7. **Test scenarios and plans** - Indicate your involvement in developing testing scenarios and plans.
+8. **Regression testing** - Note your experience with different types of testing including feature and regression testing.
+9. **Test repository maintenance** - Detail your experience in managing and maintaining test cases or repositories.
+10. **Lab setup and maintenance** - If applicable, include any experience related to lab or test environment setups.
 
-Incorporate these keywords strategically within your resume, ideally in a manner that matches the responsibilities outlined in the job description. Tailor your experiences, qualifications, and skills to reflect these keywords, and ensure they are backed by concrete examples or metrics that underscore your proficiency and achievements in these areas.
+These keywords and skills should be integrated thoughtfully into your resume, ensuring they align with your actual experience. This will help in making your resume relevant and optimized for an ATS, increasing your chances of landing an interview for the Junior QA Engineer role.
