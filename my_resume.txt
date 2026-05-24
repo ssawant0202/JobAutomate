@@ -1,84 +1,78 @@
+================================================================
+CANDIDATE
+================================================================
 Siddhesh Sawant
-2368671693 — Vancouver, BC
-ssawant0202@gmail.com — Linkedin — GitHub
+Vancouver, BC | 2368671693
+ssawant0202@gmail.com | LinkedIn: ssawant0202 | GitHub: ssawant0202
+
+================================================================
 EDUCATION
-Bachelor of Applied Science in Computer Engineering (B.A.Sc.) — Simon Fraser University (SFU)
-SKILLS
-Technical Skills Expertise EXPERIENCE
-Python, Pytest, Selenium, Playwright, Docker, GitHub Actions, JMeter, Postman, Bash, AWS (RDS)
-API Automation (REST), CI/CD Pipelines, DB Validation (SQL), E2E & Shift-Left Testing, TestRail
+================================================================
+Bachelor of Applied Science in Computer Engineering (B.A.Sc.)
+Simon Fraser University (SFU)
 
-Some Core work I've done: 
+================================================================
+SKILLS (baseline — AI will tailor to JD)
+================================================================
+Technical Skills: Python, Pytest, Selenium, Playwright, Docker, GitHub Actions, JMeter, Postman, Bash, AWS RDS, SQL, Cypress
+Expertise: API Automation (REST), CI/CD Pipelines, DB Validation (SQL), E2E Testing, Shift-Left Testing, TestRail
+
+================================================================
+POOL A — NEW/MODE SOURCE BULLETS (Jan 2024 – Jan 2025)
+USE ONLY THESE FOR NEW/MODE. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
+================================================================
+
 • Designed and maintained scalable API and integration test frameworks in Python (Pytest) for RESTful services,
-applying shift-left testing principles with fixtures, and layered assertions to validate authentication, error handling,
-and edge cases, reducing regression escapes by 45%
+  applying shift-left testing principles with fixtures and layered assertions to validate authentication, error handling,
+  and edge cases — reducing regression escapes by 45%
+
 • Implemented API automation with database-level validation using REST assertions and SQL queries to verify side
-effects and transactional correctness, collaborating with backend engineers to identify inefficiencies that contributed to a
-30% reduction in API latency
+  effects and transactional correctness, collaborating with backend engineers to identify inefficiencies that
+  contributed to a 30% reduction in API latency
+
 • Containerized test environments using Docker and Docker Compose, creating isolated, reproducible stacks for
-microservices and databases, which reduced environment-related CI failures by 50% and improved local-to-CI parity
+  microservices and databases — reducing environment-related CI failures by 50% and improving local-to-CI parity
+
 • Built and optimized CI/CD pipelines in GitHub Actions, integrating containerized test execution, regression gating,
-and environment-specific configuration, preventing unstable merges and reducing deployment-blocking failures by 40%
-• Modified and extended Bash scripts to automate test setup, configurations, and log collection within CI, while
-documenting workflows and failure triage steps in Confluence, improving debugging and shortening release cycles by 30%
+  and environment-specific configuration — preventing unstable merges and reducing deployment-blocking failures by 40%
 
-• Executed manual smoke, UAT, and regression testing by authoring structured test cases in TestRail and validating
-end-to-end user workflows before each release, reducing production defects by 30% and enabling faster deployment approvals
-• Developed automated end-to-end test suites using Cypress, implementing reusable selectors, fixtures, and environment-
-specific configs, which reduced repetitive manual regression effort by 40% and improved test reliability across releases
+• Modified and extended Bash scripts to automate test setup, environment configuration, and log collection within CI,
+  while documenting triage steps in Confluence — shortening release cycles by 30%
+
+================================================================
+POOL B — FAISAL LABS SOURCE BULLETS (Jan 2022 – Aug 2022)
+USE ONLY THESE FOR FAISAL LABS. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
+================================================================
+
+• Developed automated end-to-end test suites using Cypress, implementing reusable selectors, fixtures, and
+  environment-specific configs — reducing repetitive manual regression effort by 40% and improving test reliability
+
 • Performed backend data validation using SQL by writing JOIN-based queries and integrity checks to verify database
-state after UI and API actions, identifying data inconsistencies early and lowering post-release data issues by 25%
+  state after UI and API actions — identifying data inconsistencies early and lowering post-release data issues by 25%
+
 • Executed performance and load testing on critical application flows using Apache JMeter, analyzing response times
-and error rates to identify inefficiencies, leading to targeted fixes that improved system response times by 25%
-• Authored and maintained test documentation in Confluence, including regression checklists, test plans, and
-release validation procedures, improving cross-team clarity and reducing onboarding and handoff friction by 20%
+  and error rates to identify bottlenecks — leading to targeted fixes that improved system response times by 25%
 
+• Authored and maintained structured test cases in TestRail for smoke, UAT, and regression coverage, validating
+  end-to-end user workflows before each release — reducing production defects by 30%
 
-Software Development Engineer in Test (SDET) Jan 2024 - Jan 2025
-New/Mode Vancouver, BC
-    * Insert Chat GPT Generated Bullet point 1  *
-    * Insert Chat GPT Generated Bullet point 2  *
-    * Insert Chat GPT Generated Bullet point 3  *
-    * Insert Chat GPT Generated Bullet point 4  *
-    * Insert Chat GPT Generated Bullet point 5  *
+• Maintained test documentation in Confluence including regression checklists, test plans, and release validation
+  procedures — improving cross-team clarity and reducing onboarding and handoff friction by 20%
 
-QA Automation Engineer Jan 2023 - Aug 2023
-Faisal Labs Vancouver, BC
-    * Insert Chat GPT Generated Bullet point 1  *
-    * Insert Chat GPT Generated Bullet point 2  *
-    * Insert Chat GPT Generated Bullet point 3  *
-    * Insert Chat GPT Generated Bullet point 4  *
-    * Insert Chat GPT Generated Bullet point 5  *
+================================================================
+PROJECTS (fixed — AI must not modify these)
+================================================================
 
-PROJECTS
-Smart Issue Tracker (Website)
+Smart Issue Tracker (https://issue-tracker-kappa-nine.vercel.app/)
 • Built and deployed a production-grade issue tracking system using Next.js, Radix UI, and AWS RDS, implementing
-Google OAuth authentication, role-based access control, and dynamic caching to improve request latency. Containerized
-application and test infrastructure using Docker (separate dev/prod images, multi-stage builds) and orchestrated services
-with Docker Compose for local and CI parity. Designed end-to-end API automation with pytest and integrated it
-into a GitHub Actions CI/CD pipeline, including database-level assertions and regression gating on every commit.
+  Google OAuth authentication, role-based access control, and dynamic caching to improve request latency.
+  Containerized application and test infrastructure using Docker (separate dev/prod images, multi-stage builds)
+  and orchestrated services with Docker Compose for local and CI parity. Designed end-to-end API automation
+  with pytest and integrated it into a GitHub Actions CI/CD pipeline, including database-level assertions and
+  regression gating on every commit.
+
 AI-Powered Test Failure Triage
-• Integrated OpenAI API into a CI/CD workflow to assist in analyzing failed API and integration tests, generating
-structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback logic to
-treat AI output as untrusted input, ensuring deterministic behavior in CI pipelines. Attached AI-generated insights
-directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
-
-my_resume_keywords:
-Based on the job description provided, here are the details and keywords that are essential to optimize your resume for this Junior QA Engineer position to achieve high ATS compliance:
-
-**Job Title:**
-Junior QA Engineer
-
-**Tech Stack Keywords:**
-1. **Automated testing systems** - Mention any experience with automation tools or frameworks.
-2. **Linux/Unix** - Highlight experience and proficiency with these operating systems.
-3. **TCP/IP, SNMP** - If you have networking experience, including specific protocols mentioned.
-4. **TLS, PKI, Encryption** - Detail any security practices or protocols you've worked with.
-5. **Scripting languages (Shell, Python)** - Specify scripting languages you are proficient in, especially those listed.
-6. **Bug triage** - Show experience with bug identification, documentation, and resolution processes.
-7. **Test scenarios and plans** - Indicate your involvement in developing testing scenarios and plans.
-8. **Regression testing** - Note your experience with different types of testing including feature and regression testing.
-9. **Test repository maintenance** - Detail your experience in managing and maintaining test cases or repositories.
-10. **Lab setup and maintenance** - If applicable, include any experience related to lab or test environment setups.
-
-These keywords and skills should be integrated thoughtfully into your resume, ensuring they align with your actual experience. This will help in making your resume relevant and optimized for an ATS, increasing your chances of landing an interview for the Junior QA Engineer role.
+• Integrated OpenAI API into a CI/CD workflow to automatically analyze failed API and integration tests, generating
+  structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback
+  logic to treat AI output as untrusted input, ensuring deterministic behavior in CI pipelines. Attached AI-generated
+  insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.

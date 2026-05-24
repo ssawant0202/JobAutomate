@@ -1,251 +1,267 @@
-def get_prompt(job_description: str, my_resume: str , important_words:str) -> str:
-    
+def get_prompt(job_description: str, my_resume: str, important_words) -> str:
+
     prompt = f"""
-You are an expert ATS-focused resume writer specializing in SDET, Backend, and Platform/Cloud-adjacent roles.
-
-Your task is to rewrite my resume so that it strongly aligns with the target job description while keeping it relevant to my actual experience.
-Based on the following job description and my resume, generate a high-quality LaTeX `.tex` file containing highly ATS-optimized with high keyword recall and semantic alignment bullet points that emphasize **how** value was delivered — not just what was done.
-
-------------------------------------------------------------
-JOB DESCRIPTION (PRIMARY SIGNAL – 60% EMPHASIS):
-{job_description}
-
-------------------------------------------------------------
-RESUME EXPERIENCE (SOURCE OF TRUTH – 40% EMPHASIS):
-{my_resume}
-
-------------------------------------------------------------
-IMPORTANT WORDS & SKILLS (FROM JD):
-{important_words}
-
-------------------------------------------------------------
-**Instructions for Bullet Points:**
-OBJECTIVE:
-
-Generate a high-quality LaTeX `.tex` resume that is:
-- ATS-optimized with high keyword recall and semantic alignment
-- Framed primarily through the job description’s priorities and system context
-- Executed using my resume’s actual tools, workflows, and scope
-
-Think of this as:
-→ “What I did, described as if it were performed in a system like the JD describes.”
-
-CONTROLLED FORGING RULES (READ CAREFULLY):
-
-- You MUST extend or generalize responsibilities to better match the job description,
-  BUT ONLY if they are a reasonable evolution of what appears in my resume.
-
-
-If a JD requirement is only partially supported by my resume:
-- Emphasize overlap
-- Abstract responsibility upward (system-level phrasing)
-
-
-BULLET REWRITE RULES (STAR-BASED, JD-FRAMED):
-
-Rewrite bullets using the STAR method with this emphasis:
-- Situation: inferred from the JOB DESCRIPTION’s environment (scale, reliability, CI/CD, cloud, etc.)
-- Task: mapped from my resume responsibilities
-- Action: HOW I executed the task, using tools and techniques present in my resume
-- Result: quantified mostly everywhere, otherwise conservatively inferred
-
-ALIGNMENT STRATEGY:
-- Target ~60% JD language and priorities, ~40% resume execution details
-- Prefer JD terminology when semantically equivalent to resume terms
-- Reframe existing work to highlight:
-  • system reliability
-  • automation impact
-  • CI/CD integration
-  • Docker
-  • API Testing Pytest
-  • debugging and performance considerations
-
-KEYWORD STRATEGY:
-
-- MUST Aggressively incorporate {important_words} into bullet points and skills
-- Avoid raw keyword stuffing; prioritize natural technical phrasing
-
-HIGH HIRING SIGNAL ENFORCEMENT (CRITICAL):
-
-Every bullet MUST strongly signal at least ONE of the following:
-- Ownership of test quality or reliability outcomes
-- System-level thinking (not task execution)
-- Automation maturity beyond basic scripting
-- CI/CD quality gating or release impact
-- API correctness, data integrity, or regression prevention
-- Scalability, maintainability, or test architecture decisions
-- Cross-team engineering influence (backend, infra, DevOps)
-
-GENERIC QA LANGUAGE IS NOT ALLOWED.
-
---------------------------------
-
-SDET ROLE FRAMING (MANDATORY):
-
-All experience must be framed as:
-- A Software Development Engineer in Test (SDET)
-- A quality gatekeeper, not a passive tester
-- An engineer influencing release confidence and system stability
-
-CI/CD work must be framed as:
-- Regression gating
-- Release blocking
-- Quality enforcement
-- Failure prevention
-NOT merely “pipeline setup”.
-
---------------------------------
-
-ARCHITECTURAL JUSTIFICATION RULE:
-
-If a bullet claims:
-- scalable
-- robust
-- modular
-- reusable
-- maintainable
-- extensible
-
-You MUST justify it with HOW, such as:
-- layered test architecture
-- reusable pytest fixtures
-- parametrization strategies
-- environment-based configuration
-- containerized test execution
-- DB-level validation
-- deterministic assertions
-- failure isolation strategies
-
---------------------------------
-
-ENGINEERING BULLET STRUCTURE (ENFORCED):
-
-Each bullet MUST implicitly follow:
-Action → System/Mechanism → Engineering Method → Validation Strategy → Impact
-
---------------------------------
-
-FAIL CONDITIONS (AUTO-REJECT):
-
-The output is INVALID if any bullet:
-- Sounds like manual QA
-- Lacks HOW details
-- Uses vague impact statements
-- Claims senior ownership without defensible scope
-- Mentions tools not present in the resume
-- Uses filler phrases (“worked on”, “helped”, “responsible for”)
-
---------------------------------
-
-SCORING OBJECTIVE (INTERNAL):
-
-Write bullets that would score ≥9/10 if evaluated by:
-- A senior SDET interviewer
-- A backend engineer reviewing test credibility
-- An ATS parsing for SDET keywords
-
-OUTPUT REQUIREMENTS:
-- Generate exactly 5 rewritten bullets per experience.
-- Generate Skills matching to the job description and fill in *Insert Skill* in Skills section 
-- Each bullet must explain HOW the result was achieved (tools, techniques, design decisions).
-- Use concrete technical language (APIs, CI/CD, Docker, SQL, pytest, etc.) ONLY if present in resume.
-- Quantify results ONLY if numbers already exist or can be conservatively inferred.
-- Each bullet: 60–70 words.
-- Use LaTeX bold syntax for important technologies: \\textbf{{example}}.
-- Avoid generic phrases like “worked on”, “responsible for”, “involved in”.
-- Quantify results everywhere
-
-### Output Requirements:
-- Output only valid LaTeX from `\\documentclass{{resume}}` to `\\end{{document}}`
-- Do **not** include any Markdown like triple backticks (```).
-- Escape all LaTeX-sensitive characters (`%`, `&`, '$' etc.) with a backslash.
-- Keep the LaTeX structure **exactly the same** as the provided example.
-- Replace only the `\\item` bullet point text.
-
-
-------------------------------------------------------------
-
-------------------------------------------------------------
-**Output Format (Example):**
-
-
-\\documentclass{{resume}} % Use the custom resume.cls style
-
-\\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{{geometry}}
-\\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
-\\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
-\\name{{Siddhesh Sawant}}
-\\address{{2368671693 | Vancouver, BC}}
-\\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}} | 
-\\href{{https://www.linkedin.com/in/ssawant0202}}{{Linkedin}} | 
-\\href{{https://github.com/ssawant0202}}{{GitHub}}}}
-
-\\begin{{document}}
-
-\\begin{{rSection}}{{Education}}
-{{\\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
-\\end{{rSection}}
-
-\\begin{{rSection}}{{SKILLS}}
-\\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
-Technical Skills & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,\\\\   
-
-Expertise & *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*, *Insert Skill*,
-\\end{{tabular}}
-\\end{{rSection}}
-
-\\begin{{rSection}}{{EXPERIENCE}}
-
-\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2024 - Jan 2025\\\\
-New/Mode \\hfill \\textit{{Vancouver, BC}}
-
-\\begin{{itemize}}
-    \\item * Insert Chat GPT Generated Bullet point 1  *
-    \\item * Insert Chat GPT Generated Bullet point 2  *
-    \\item * Insert Chat GPT Generated Bullet point 3  *
-    \\item * Insert Chat GPT Generated Bullet point 4  *
-    \\item * Insert Chat GPT Generated Bullet point 5  *
-
-\\end{{itemize}}
-
-\\textbf{{*Insert Job Title from job description*}} \\hfill Jan 2023 - Aug 2023\\\\
-Faisal Labs \\hfill \\textit{{Vancouver, BC}}
-
-\\begin{{itemize}}
-    \\item * Insert Chat GPT Generated Bullet point 6  *
-    \\item * Insert Chat GPT Generated Bullet point 7  *
-    \\item * Insert Chat GPT Generated Bullet point 8  *
-    \\item * Insert Chat GPT Generated Bullet point 9  *
-    \\item * Insert Chat GPT Generated Bullet point 10  *
-
-\\end{{itemize}}
-
-\\begin{{rSection}}{{PROJECTS}}
-
-\\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
-\\begin{{itemize}}
-    \\item Built and deployed a production-grade issue tracking system using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, implementing \\textbf{{Google OAuth}} authentication, role-based access control, and dynamic caching to improve request latency.
-Containerized application and test infrastructure using \\textbf{{Docker}} (separate dev/prod images, multi-stage builds) and orchestrated services with \\textbf{{Docker Compose}} for local and CI parity.
-Designed \\textbf{{end-to-end API automation}} with \\textbf{{pytest}} and integrated it into a \\textbf{{GitHub Actions CI/CD pipeline}}, including database-level assertions and regression gating on every commit.
-\\end{{itemize}}
-
-\\textbf{{AI-Powered Test Failure Triage}}
-\\begin{{itemize}}
-
-   \\item Integrated \\textbf{{ChatGPT API}} into a CI/CD workflow to automatically analyze failed \\textbf{{API and integration tests}}, generating structured summaries and root-cause classifications from test logs.
-    Implemented validation, timeouts, and fallback logic to treat AI output as \\textbf{{untrusted input}}, ensuring deterministic behavior in \\textbf{{CI pipelines}}.
-    Attached AI-generated insights directly to the \\textbf{{issue tracker}} to accelerate debugging and reduce mean time to resolution.
-\\end{{itemize}}
-
-
-\\end{{rSection}}
-
-\\end{{rSection}}
-\\end{{document}}
-
-
-### OUTPUT FORMAT ###
-Use The exact same  LaTeX format resume just update the \\items (bullet points) nothing else so that the over structure remains the same.
-please do not add '```latex' above \\documentclass{{resume}} and '```' below \\end{{document}}
-"""
+    You are a senior SDET engineer and expert ATS resume writer. Your output will be a complete,
+    compilable LaTeX resume file tailored to the job description below.
+
+    ============================================================
+    STEP 1 — KEYWORD EXTRACTION (INTERNAL — DO THIS BEFORE WRITING ANYTHING)
+    ============================================================
+
+    Extract the top 15 technical keywords and skills from the JOB DESCRIPTION.
+    Classify each one using the TECHNOLOGY ELIGIBILITY FILTER below.
+    Only Tier 1 and Tier 2 keywords may appear anywhere in the final output.
+
+    ------------------------------------------------------------
+    TECHNOLOGY ELIGIBILITY FILTER
+    ------------------------------------------------------------
+
+    TIER 1 — DIRECT USE
+    The tool or technology is explicitly present in my resume.
+    → Use freely. Prefer the JD's exact phrasing if semantically identical.
+
+    TIER 2 — SEMANTIC BRIDGE
+    The JD term describes the same engineering concept as something in my resume,
+    just at a higher abstraction or using different terminology.
+    → Use the JD's preferred term, grounded in my resume's actual tooling.
+
+    Approved bridges (derive others using the same logic):
+    ╔══════════════════════════════════════╦═══════════════════════════════════════════╗
+    ║ My Resume Has                        ║ Tier 2 Term You May Use                   ║
+    ╠══════════════════════════════════════╬═══════════════════════════════════════════╣
+    ║ Docker + Docker Compose              ║ container orchestration, isolated envs    ║
+    ║ GitHub Actions                       ║ CI/CD pipelines, automated quality gates  ║
+    ║ SQL + Pytest assertions              ║ data integrity validation, DB-level tests  ║
+    ║ Pytest fixtures + parametrize        ║ modular test architecture, reusable comps  ║
+    ║ Bash scripting in CI                 ║ test infrastructure automation             ║
+    ║ REST API testing (Postman/Pytest)    ║ service-layer validation, contract testing ║
+    ║ CI failure logs + Confluence         ║ test observability, failure traceability   ║
+    ║ Selenium / Playwright                ║ browser automation, E2E coverage           ║
+    ║ AWS RDS                              ║ cloud-hosted databases, managed data stores║
+    ╚══════════════════════════════════════╩═══════════════════════════════════════════╝
+
+    TIER 3 — HARD BLOCK
+    Zero semantic connection to my resume. NEVER use — even if prominent in the JD.
+    Substitute with the closest Tier 1 or Tier 2 equivalent instead.
+
+    Self-check before finalizing every bullet:
+    "Is every tool and concept I used either in my resume, or a direct semantic
+    abstraction of something that is?"
+    → YES → proceed.
+    → NO  → replace with a Tier 1/2 equivalent. Do not proceed until this passes.
+
+    ============================================================
+    JOB DESCRIPTION — PRIMARY SIGNAL (60% EMPHASIS)
+    ============================================================
+
+    {job_description}
+
+    ============================================================
+    MY RESUME — SOURCE OF TRUTH (40% EMPHASIS)
+    ============================================================
+
+    The resume content below contains two separated bullet pools.
+    These pools are your ONLY source of experience. Do not invent responsibilities
+    outside of what can be reasonably evolved from them.
+
+    POOL A → New/Mode bullets (Jan 2024 – Jan 2025)
+                The first group of bullets before the blank line in the resume.
+                Use ONLY these for New/Mode bullets.
+
+    POOL B → Faisal Labs bullets (Jan 2022 – Aug 2022)
+                The second group of bullets after the blank line in the resume.
+                Use ONLY these for Faisal Labs bullets.
+
+    CRITICAL: Do NOT copy any bullet from the resume verbatim.
+            These are source material only. Rewrite everything.
+
+    {my_resume}
+
+    COMPANY CONTEXT — use to frame the "Situation" in STAR bullets:
+    New/Mode:    Civic technology SaaS platform enabling large-scale advocacy campaigns
+                and constituent engagement, serving government and nonprofit clients.
+    Faisal Labs: Early-stage product startup building web applications with a small,
+                cross-functional engineering team under fast iteration cycles.
+
+    ============================================================
+    STEP 2 — GENERATE THE PROFESSIONAL SUMMARY
+    ============================================================
+
+    Write a 2–3 sentence professional summary:
+    - Sentence 1: Role identity + years of experience + core discipline
+    - Sentence 2: 3–4 Tier 1/2 keywords most relevant to the JD, grounded in your tools
+    - Sentence 3: Value statement — what you bring to this specific team/role
+    - Total: 40–55 words
+    - Tone: confident, technical, specific
+    - BANNED words: passionate, hardworking, detail-oriented, motivated, enthusiastic,
+                    eager, dynamic, team player, results-driven
+
+    ============================================================
+    STEP 3 — GENERATE EXPERIENCE BULLETS
+    ============================================================
+
+    Output EXACTLY 5 bullets for New/Mode and EXACTLY 5 for Faisal Labs.
+    This is a hard constraint. Never output 4 or 6. Never add extra bullet lines.
+
+    ------------------------------------------------------------
+    BULLET WRITING RULES
+    ------------------------------------------------------------
+
+    STAR FRAMING:
+    Situation → inferred from the JD's environment (scale, reliability, CI/CD, cloud)
+    Task      → sourced from Pool A or Pool B for the correct role
+    Action    → HOW you executed it, using only Tier 1/2 tools and techniques
+    Result    → use a number only if it exists in my resume; omit rather than fabricate
+
+    FORGING BOUNDARIES:
+    YOU MAY:
+        ✓ Reframe and elevate scope to match JD language (junior → mid-level framing)
+        ✓ Use Tier 2 bridges to match JD terminology
+        ✓ Infer reasonable system context from the JD environment
+
+    YOU MUST NOT:
+        ✗ Use any Tier 3 technology, even once
+        ✗ Invent team sizes, company scale, or infrastructure not supported by context
+        ✗ Copy any bullet from my resume verbatim
+        ✗ Claim staff/lead/principal-level ownership
+        ✗ Use tools not derivable from Tier 1 or Tier 2
+
+    BULLET STRUCTURE (enforce on every bullet):
+    Action verb → Tool/System → Engineering Method → Validation/Quality Strategy → Impact
+
+    WORD COUNT: 25–40 words per bullet. Tight and specific beats verbose.
+
+    STRONG SIGNAL REQUIREMENT — every bullet must signal at least ONE of:
+    • Ownership of a test quality or automation reliability outcome
+    • System-level thinking (architecture decisions, not task execution)
+    • CI/CD quality gating, regression prevention, or release impact
+    • API correctness, data integrity, or DB-level validation
+    • Cross-team engineering influence (backend, infra, or DevOps collaboration)
+
+    ARCHITECTURAL CLAIMS RULE:
+    If a bullet uses: scalable / robust / modular / reusable / maintainable / extensible
+    → Justify it with a concrete mechanism:
+        "via parameterized pytest fixtures"
+        "through environment-scoped Docker Compose configs"
+        "using layered assertion strategies with shared fixtures"
+        "enforced by regression gates in GitHub Actions"
+
+    BANNED LANGUAGE (any bullet containing these is invalid):
+    Filler verbs:   worked on, helped with, assisted, was responsible for, involved in
+    Vague impact:   improved overall quality, enhanced performance, increased efficiency
+    Manual QA tone: executed test cases, performed regression testing, ran test scripts
+    Any Tier 3 technology name
+
+    BOLD RULE:
+    Use \\textbf{{}} for: tool names, frameworks, methodologies, and key JD-aligned terms.
+    Do not bold entire phrases. Bold the noun/technology only.
+
+    ============================================================
+    STEP 4 — GENERATE SKILLS
+    ============================================================
+
+    Technical Skills row: 8–10 tools, in order of relevance to the JD.
+    Only Tier 1 tools. No Tier 2 abstractions here — skills must be concrete tools.
+
+    Expertise row: 6–8 domain competencies.
+    These may use Tier 2 language (e.g., "API Automation (REST)", "Shift-Left Testing").
+    Order by JD relevance.
+
+    ============================================================
+    STEP 5 — FINAL SELF-REVIEW (DO THIS BEFORE OUTPUTTING)
+    ============================================================
+
+    Before generating the LaTeX, verify:
+    □ Every bullet passed the Tier 3 self-check
+    □ New/Mode has exactly 5 bullets
+    □ Faisal Labs has exactly 5 bullets
+    □ No bullet is copied verbatim from my resume
+    □ No bullet uses banned language
+    □ Every architectural claim is justified with a HOW
+    □ Summary is 40–55 words
+    □ No bullet exceeds 40 words
+    □ LaTeX is valid: PROJECTS is its own \\rSection, not nested inside EXPERIENCE
+
+    ============================================================
+    OUTPUT RULES
+    ============================================================
+
+    - Output ONLY valid LaTeX, starting at \\documentclass{{resume}} and ending at \\end{{document}}
+    - Do NOT include triple backticks, markdown formatting, or any text before \\documentclass
+    - Escape all LaTeX-sensitive characters: % → \\%, & → \\&, $ → \\$
+    - Keep the LaTeX structure EXACTLY as the template below — alter only the designated sections
+    - Do NOT modify the PROJECTS section bullets — output them exactly as shown
+
+    ============================================================
+    LATEX TEMPLATE — EXACT STRUCTURE (DO NOT ALTER LAYOUT OR NESTING)
+    ============================================================
+
+    \\documentclass{{resume}}
+
+    \\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{{geometry}}
+    \\newcommand{{\\tab}}[1]{{\\hspace{{.2667\\textwidth}}\\rlap{{#1}}}}
+    \\newcommand{{\\itab}}[1]{{\\hspace{{0em}}\\rlap{{#1}}}}
+    \\name{{Siddhesh Sawant}}
+    \\address{{2368671693 | Vancouver, BC}}
+    \\address{{\\href{{mailto:ssawant0202@gmail.com}}{{ssawant0202@gmail.com}} | 
+    \\href{{https://www.linkedin.com/in/ssawant0202}}{{Linkedin}} | 
+    \\href{{https://github.com/ssawant0202}}{{GitHub}}}}
+
+    \\begin{{document}}
+
+    \\begin{{rSection}}{{Summary}}
+    REPLACE WITH GENERATED SUMMARY
+    \\end{{rSection}}
+
+    \\begin{{rSection}}{{Education}}
+    {{\\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
+    \\end{{rSection}}
+
+    \\begin{{rSection}}{{Skills}}
+    \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
+    Technical Skills & REPLACE WITH GENERATED TECHNICAL SKILLS \\\\
+    Expertise        & REPLACE WITH GENERATED EXPERTISE \\\\
+    \\end{{tabular}}
+    \\end{{rSection}}
+
+    \\begin{{rSection}}{{Experience}}
+
+    \\textbf{{Software Development Engineer in Test (SDET)}} \\hfill Jan 2024 -- Jan 2025\\\\
+    New/Mode \\hfill \\textit{{Vancouver, BC}}
+    \\begin{{itemize}}
+        \\item BULLET 1
+        \\item BULLET 2
+        \\item BULLET 3
+        \\item BULLET 4
+        \\item BULLET 5
+    \\end{{itemize}}
+
+    \\textbf{{QA Automation Engineer}} \\hfill Jan 2022 -- Aug 2022\\\\
+    Faisal Labs \\hfill \\textit{{Vancouver, BC}}
+    \\begin{{itemize}}
+        \\item BULLET 6
+        \\item BULLET 7
+        \\item BULLET 8
+        \\item BULLET 9
+        \\item BULLET 10
+    \\end{{itemize}}
+
+    \\end{{rSection}}
+
+    \\begin{{rSection}}{{Projects}}
+
+    \\textbf{{Smart Issue Tracker}} \\href{{https://issue-tracker-kappa-nine.vercel.app/}}{{(Website)}}
+    \\begin{{itemize}}
+        \\item Built and deployed a production-grade issue tracking system using \\textbf{{Next.js}}, \\textbf{{Radix UI}}, and \\textbf{{AWS RDS}}, implementing \\textbf{{Google OAuth}} authentication, role-based access control, and dynamic caching to improve request latency. Containerized application and test infrastructure using \\textbf{{Docker}} (separate dev/prod images, multi-stage builds) and orchestrated services with \\textbf{{Docker Compose}} for local and CI parity. Designed \\textbf{{end-to-end API automation}} with \\textbf{{pytest}} and integrated it into a \\textbf{{GitHub Actions CI/CD pipeline}}, including database-level assertions and regression gating on every commit.
+    \\end{{itemize}}
+
+    \\textbf{{AI-Powered Test Failure Triage}}
+    \\begin{{itemize}}
+        \\item Integrated \\textbf{{OpenAI API}} into a CI/CD workflow to automatically analyze failed \\textbf{{API and integration tests}}, generating structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback logic to treat AI output as \\textbf{{untrusted input}}, ensuring deterministic behavior in \\textbf{{CI pipelines}}. Attached AI-generated insights directly to the \\textbf{{issue tracker}} to accelerate debugging and reduce mean time to resolution.
+    \\end{{itemize}}
+
+    \\end{{rSection}}
+
+    \\end{{document}}
+    """
     return prompt

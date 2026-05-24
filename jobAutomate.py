@@ -102,7 +102,8 @@ def get_latex_code():
                     job_description = file.read()  # Read content
 
         #integrate imp words into my resume 
-        important_words = integrate_important_words_into_resume(job_description)
+        # important_words = integrate_important_words_into_resume(job_description)
+        important_words = ""
 
          #Get Resume
         if os.path.isdir(resume_dir):  # Ensure it's a directory

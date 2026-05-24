@@ -20,8 +20,9 @@ def generate_latex_code(job_description: str, my_resume: str, important_words) -
     user_prompt = prompts.get_prompt(job_description, my_resume, important_words)
 
     completion = client.chat.completions.create(
-        model="gpt-4-turbo",
+        # model="gpt-4-turbo",
         # model="gpt-5.2",
+        model = "gpt-5.5",
 
         messages=[
             {
