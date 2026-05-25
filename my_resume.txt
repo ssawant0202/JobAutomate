@@ -40,7 +40,7 @@ USE ONLY THESE FOR NEW/MODE. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
   while documenting triage steps in Confluence — shortening release cycles by 30%
 
 ================================================================
-POOL B — FAISAL LABS SOURCE BULLETS (Jan 2022 – Aug 2022)
+POOL B — FAISAL LABS SOURCE BULLETS (Jan 2021 – Oct 2021)
 USE ONLY THESE FOR FAISAL LABS. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
 ================================================================
 

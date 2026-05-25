@@ -238,13 +238,13 @@ Before generating the LaTeX, verify:
 
     \\begin{{document}}
 
-    \\begin{{rSection}}{{Summary}}
-    REPLACE WITH GENERATED SUMMARY
+    \\begin{{rSection}}{{Summary \\ & Education}}
+    \\begin{{tabular}}{{ @{{}} p{{\textwidth}} @{{}}}}
+    REPLACE WITH GENERATED SUMMARY \\\\
+    {{\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
+    \\end{{tabular}}
     \\end{{rSection}}
 
-    \\begin{{rSection}}{{Education}}
-    {{\\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
-    \\end{{rSection}}
 
     \\begin{{rSection}}{{Skills}}
     \\begin{{tabular}}{{ @{{}} >{{\\bfseries}}l @{{\\hspace{{6ex}}}} l }}
@@ -265,7 +265,7 @@ Before generating the LaTeX, verify:
         \\item BULLET 5
     \\end{{itemize}}
 
-    \\textbf{{QA Automation Engineer}} \\hfill Jan 2022 -- Aug 2022\\\\
+    \\textbf{{QA Automation Engineer}} \\hfill Jan 2021 -- Oct 2021\\\\
     Faisal Labs \\hfill \\textit{{Vancouver, BC}}
     \\begin{{itemize}}
         \\item BULLET 6
