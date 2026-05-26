@@ -68,7 +68,7 @@ outside of what can be reasonably evolved from them.
             The first group of bullets before the blank line in the resume.
             Use ONLY these for New/Mode bullets.
  
-  POOL B → Faisal Labs bullets (Jan 2022 – Aug 2022)
+  POOL B → Faisal Labs bullets (Jan 2021 – Oct 2021)
             The second group of bullets after the blank line in the resume.
             Use ONLY these for Faisal Labs bullets.
  
@@ -107,7 +107,7 @@ This is a hard constraint. Never output 4 or 6. Never add extra bullet lines.
 NEW/MODE BULLET RULES — DIFFERENT RULES PER SLOT
 ------------------------------------------------------------
  
-NEW/MODE BULLETS 1–2 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
+NEW/MODE BULLETS 2–3 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
   These two bullets are written 100% from the job description.
   Goal: maximum ATS keyword hit. Make these the strongest, most JD-aligned bullets on the resume.
  
@@ -118,15 +118,26 @@ NEW/MODE BULLETS 1–2 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
   → Quantify with conservatively inferred numbers if none exist (e.g., "across 10+ services", "reducing X by ~30%")
   → Frame at junior-to-mid level — credible, not inflated
  
-NEW/MODE BULLETS 3–5 (SOURCED FROM POOL A, REWRITTEN TO MATCH JD):
+NEW/MODE BULLETS 4–5 (SOURCED FROM POOL A, REWRITTEN TO MATCH JD):
   → Source from Pool A only. Do NOT copy verbatim — rewrite using JD language and STAR structure.
   → Apply Tier 1/2 bridges to match JD terminology where possible.
  
 ------------------------------------------------------------
 FAISAL LABS BULLET RULES
 ------------------------------------------------------------
+ FAISAL LABS BULLETS 1–2 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
+  These two bullets are written 100% from the job description.
+  Goal: maximum ATS keyword hit. Make these the strongest, most JD-aligned bullets on the resume.
  
-ALL 5 FAISAL LABS BULLETS (SOURCED FROM POOL B, REWRITTEN TO MATCH JD):
+  → Identify the top 2 most emphasized requirements or responsibilities in the JD
+  → Write one bullet per requirement, framed as if you owned it at New/Mode
+  → Use the JD's exact terminology and keywords aggressively
+  → Still apply Tier 3 hard block — only technologies plausible for a Python/SDET engineer
+  → Quantify with conservatively inferred numbers if none exist (e.g., "across 10+ services", "reducing X by ~30%")
+  → Frame at junior-to-mid level — credible, not inflated
+
+
+FAISAL LABS BULLETS 3–5 (SOURCED FROM POOL B, REWRITTEN TO MATCH JD):
   → Source from Pool B only. Do NOT copy verbatim.
   → Apply Tier 1/2 bridges. Reframe scope to align with JD environment.
  
