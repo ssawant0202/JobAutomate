@@ -134,7 +134,6 @@ def get_latex_code():
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
     # descriptionscrapper.generate_description_files()
-    add_JD_res.forge_resume()
     get_latex_code()
 
     
