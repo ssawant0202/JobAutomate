@@ -76,3 +76,14 @@ AI-Powered Test Failure Triage
   structured summaries and root-cause classifications from test logs. Implemented validation, timeouts, and fallback
   logic to treat AI output as untrusted input, ensuring deterministic behavior in CI pipelines. Attached AI-generated
   insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
+
+my_resume_keywords:
+- Owned and evolved enterprise-wide **test strategy** for platform initiatives, defining quality standards, release readiness criteria, and scalable QA practices across engineering, product, and QA teams.
+
+- Designed and approved **risk-based test plans** during discovery, planning, and refinement phases, aligning test coverage with business priorities, technical risk, player experience, and release timelines.
+
+- Led **end-to-end testing** across complex sportsbook, casino, and platform workflows, coordinating functional, regression, integration, and exploratory testing to improve release confidence.
+
+- Built and maintained QA **dashboards, metrics, and KPIs** to track defect trends, test coverage, release health, quality gates, and production readiness for stakeholders.
+
+- Improved QA **processes, tools, frameworks, bug triage, and defect management** workflows, accelerating issue prioritization, troubleshooting, and continuous improvement across delivery teams.

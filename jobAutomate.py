@@ -1,7 +1,7 @@
 import descriptionscrapper
 import openAItest
 import os, time ,sys
-
+import add_JD_res
 from openai import OpenAI
 import os
 
@@ -25,8 +25,8 @@ def integrate_important_words_into_resume(job_description ):
     keyword_prompt = keywords_prompts.get_prompt(job_description)
 
     key_words_completion = client.chat.completions.create(
-        model="gpt-4-turbo",
-        # model="gpt-5.2",
+        # model="gpt-4-turbo",
+        model="gpt-5.5",
 
 
         messages=[
@@ -102,8 +102,7 @@ def get_latex_code():
                     job_description = file.read()  # Read content
 
         #integrate imp words into my resume 
-        # important_words = integrate_important_words_into_resume(job_description)
-        important_words = ""
+        # important_words = ""
 
          #Get Resume
         if os.path.isdir(resume_dir):  # Ensure it's a directory
@@ -112,9 +111,11 @@ def get_latex_code():
                     with open(job_resume_path, "r", encoding="utf-8") as file:
                         my_resume = file.read()  # Read content
 
-        latex_file_path = os.path.join(folder_path, "latex_code.txt")
         # Check if the file already exists
+        latex_file_path = os.path.join(folder_path, "latex_code.txt")
+
         if not os.path.exists(latex_file_path):
+            important_words = integrate_important_words_into_resume(job_description)
             latex_code = openAItest.generate_latex_code(job_description, my_resume, important_words)
             if latex_code:
                 print(f"✅ Got Latex Code for: {folder}")
@@ -132,7 +133,8 @@ def get_latex_code():
 
 if __name__ == "__main__":
     #Get the job description from linkedin and generate text file contaning the job description
-    descriptionscrapper.generate_description_files()
+    # descriptionscrapper.generate_description_files()
+    add_JD_res.forge_resume()
     get_latex_code()
 
     
