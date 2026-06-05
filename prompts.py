@@ -102,6 +102,8 @@ STEP 3 — GENERATE EXPERIENCE BULLETS
  
 Output EXACTLY 5 bullets for New/Mode and EXACTLY 5 for Faisal Labs.
 This is a hard constraint. Never output 4 or 6. Never add extra bullet lines.
+WORD COUNT: 25–40 words per bullet. Tight and specific beats verbose.
+
  
 ------------------------------------------------------------
 NEW/MODE BULLET RULES — DIFFERENT RULES PER SLOT
@@ -166,7 +168,6 @@ FORGING BOUNDARIES:
 BULLET STRUCTURE (enforce on every bullet):
   Action verb → Tool/System → Engineering Method → Validation/Quality Strategy → Impact
  
-WORD COUNT: 25–40 words per bullet. Tight and specific beats verbose.
  
 STRONG SIGNAL REQUIREMENT — every bullet must signal at least ONE of:
   • Ownership of a test quality or automation reliability outcome
@@ -221,6 +222,8 @@ Before generating the LaTeX, verify:
   □ Summary is 40–55 words
   □ No bullet exceeds 40 words
   □ LaTeX is valid: PROJECTS is its own \\rSection, not nested inside EXPERIENCE
+  □ Do NOT add ''' latex on top and ''' at the end
+
 
     ============================================================
     OUTPUT RULES
@@ -249,7 +252,7 @@ Before generating the LaTeX, verify:
 
     \\begin{{document}}
 
-    \\begin{{rSection}}{{Summary \\ & Education}}
+    \\begin{{rSection}}{{Summary \\& Education}}
     \\begin{{tabular}}{{ @{{}} p{{\textwidth}} @{{}}}}
     REPLACE WITH GENERATED SUMMARY \\\\
     {{\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)

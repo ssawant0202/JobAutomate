@@ -78,12 +78,12 @@ AI-Powered Test Failure Triage
   insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-- Owned and evolved enterprise-wide **test strategy** for platform initiatives, defining quality standards, release readiness criteria, and scalable QA practices across engineering, product, and QA teams.
+- Maintained and supported enterprise systems, security infrastructure, and relational databases across Linux-based environments, ensuring availability, stability, security, usability, and performance standards for production services.
 
-- Designed and approved **risk-based test plans** during discovery, planning, and refinement phases, aligning test coverage with business priorities, technical risk, player experience, and release timelines.
+- Administered and monitored virtualized infrastructure using VMware and Proxmox, performing system installation, configuration, patching, troubleshooting, and capacity/performance analysis for mission-critical applications.
 
-- Led **end-to-end testing** across complex sportsbook, casino, and platform workflows, coordinating functional, regression, integration, and exploratory testing to improve release confidence.
+- Designed, maintained, and optimized MySQL and MS SQL databases, including schema updates, access controls, backups, recovery procedures, performance tuning, and database consultation for internal stakeholders.
 
-- Built and maintained QA **dashboards, metrics, and KPIs** to track defect trends, test coverage, release health, quality gates, and production readiness for stakeholders.
+- Automated operational support, monitoring, maintenance, and reporting tasks using Bash and Python scripts, reducing manual effort and improving consistency across systems and database administration workflows.
 
-- Improved QA **processes, tools, frameworks, bug triage, and defect management** workflows, accelerating issue prioritization, troubleshooting, and continuous improvement across delivery teams.
+- Applied system security best practices across servers, databases, and infrastructure, including access management, vulnerability remediation, log analysis, incident response support, and after-hours operational troubleshooting.
