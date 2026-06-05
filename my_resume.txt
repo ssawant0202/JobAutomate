@@ -78,12 +78,10 @@ AI-Powered Test Failure Triage
   insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-- Maintained and supported enterprise systems, security infrastructure, and relational databases across Linux-based environments, ensuring availability, stability, security, usability, and performance standards for production services.
+Please paste the full job description so I can extract the role details, prioritize requirements, identify the top ATS keywords, and generate five tailored technical resume bullet points.
 
-- Administered and monitored virtualized infrastructure using VMware and Proxmox, performing system installation, configuration, patching, troubleshooting, and capacity/performance analysis for mission-critical applications.
-
-- Designed, maintained, and optimized MySQL and MS SQL databases, including schema updates, access controls, backups, recovery procedures, performance tuning, and database consultation for internal stakeholders.
-
-- Automated operational support, monitoring, maintenance, and reporting tasks using Bash and Python scripts, reducing manual effort and improving consistency across systems and database administration workflows.
-
-- Applied system security best practices across servers, databases, and infrastructure, including access management, vulnerability remediation, log analysis, incident response support, and after-hours operational troubleshooting.
+If available, also include:
+- Your current resume or relevant experience
+- Target job title
+- Tech stack you want emphasized
+- Any metrics/impact you want included

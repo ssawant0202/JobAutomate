@@ -3,7 +3,6 @@ import openAItest
 import os, time ,sys
 from openai import OpenAI
 import os
-import createFiles
 from dotenv import load_dotenv, find_dotenv
 import prompts 
 import keywords_prompts
@@ -15,6 +14,9 @@ def integrate_important_words_into_resume(job_description ):
     _ = load_dotenv(find_dotenv())
     parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
     resume_dir = "/Users/siddheshsawant/Projects/JobAutomate"
+    if sys.platform == "win32":
+        parent_dir = "D:/JobApplications/AutomatedPDFs"  # Change to your desired path
+        resume_dir = "D:/JobApplications/Code/JobAutomate"
 
     client = OpenAI(
         api_key=os.environ.get('OPEN_API_KEY'),
@@ -82,8 +84,8 @@ def get_latex_code():
         parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"
         resume_dir = "/Users/siddheshsawant/Projects/JobAutomate"
     elif sys.platform == "win32":
-        parent_dir = r"\\192.168.5.3\JobApplications\AutomatedPDFs"  # Change to your desired path
-        resume_dir = r"\\192.168.5.3\JobApplications"
+        parent_dir = "D:/JobApplications/AutomatedPDFs"  # Change to your desired path
+        resume_dir = "D:/JobApplications/Code/JobAutomate"
     else:
         raise RuntimeError("Unsupported OS")
     

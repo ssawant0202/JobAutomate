@@ -38,7 +38,7 @@ def generate_description_files():
     if sys.platform == "darwin":
         parent_dir = "/Users/siddheshsawant/Documents/JobApplications/AutomatedPDFs"  # Change to your desired path
     elif sys.platform == "win32":
-        parent_dir = r"E:\Applications 2024\AutomatedPDFs"  # Change to your desired path
+        parent_dir = "D:/JobApplications/AutomatedPDFs"  # Change to your desired path
     else:
         raise RuntimeError("Unsupported OS")
 
