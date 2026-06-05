@@ -76,7 +76,7 @@ Every bullet MUST strongly signal at least ONE of the following:
 - Scalability, maintainability, or test architecture decisions
 - Cross-team engineering influence (backend, infra, DevOps)
 
-GENERIC QA LANGUAGE IS NOT ALLOWED.
+GENERIC QA LANGUAGE IS NOT ALLOWED
 
 --------------------------------
 
