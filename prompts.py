@@ -36,7 +36,7 @@ TIER 2 — SEMANTIC BRIDGE
   ║ Bash scripting in CI                 ║ test infrastructure automation             ║
   ║ REST API testing (Postman/Pytest)    ║ service-layer validation, contract testing ║
   ║ CI failure logs + Confluence         ║ test observability, failure traceability   ║
-  ║ Selenium / Playwright                ║ browser automation, E2E coverage           ║
+  ║ Cypress/ Selenium / Playwright                ║ browser automation, E2E coverage           ║
   ║ AWS RDS                              ║ cloud-hosted databases, managed data stores║
   ╚══════════════════════════════════════╩═══════════════════════════════════════════╝
  
@@ -210,7 +210,7 @@ STEP 5 — FINAL SELF-REVIEW (DO THIS BEFORE OUTPUTTING)
 ============================================================
  
 Before generating the LaTeX, verify:
-  □ Bullets 1–2 (New/Mode) are written entirely from the JD — no Pool A dependency
+  □ Bullets 1–2 (New/Mode) are written and forged entirely from the JD — no Pool A dependency
   □ Bullets 3–5 (New/Mode) are sourced from Pool A and rewritten
   □ All 5 Faisal Labs bullets are sourced from Pool B and rewritten
   □ Every bullet passed the Tier 3 self-check
@@ -253,9 +253,9 @@ Before generating the LaTeX, verify:
     \\begin{{document}}
 
     \\begin{{rSection}}{{Summary \\& Education}}
-    \\begin{{tabular}}{{ @{{}} p{{\textwidth}} @{{}}}}
+    \\begin{{tabular}}{{ @{{}} p{{\\textwidth}} @{{}}}}
     REPLACE WITH GENERATED SUMMARY \\\\
-    {{\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
+    {{\\bf Bachelor of Applied Science in Computer Engineering (B.A.Sc.)}} | Simon Fraser University (SFU)
     \\end{{tabular}}
     \\end{{rSection}}
 
@@ -268,8 +268,8 @@ Before generating the LaTeX, verify:
     \\end{{rSection}}
 
     \\begin{{rSection}}{{Experience}}
-
-    \\textbf{{Software Development Engineer in Test (SDET)}} \\hfill Jan 2024 -- Jan 2025\\\\
+    
+    \\textbf{{QA Automation Engineer (Co-op)}} \\hfill Jan 2023 -- Jan 2024\\\\
     New/Mode \\hfill \\textit{{Vancouver, BC}}
     \\begin{{itemize}}
         \\item BULLET 1
@@ -279,7 +279,7 @@ Before generating the LaTeX, verify:
         \\item BULLET 5
     \\end{{itemize}}
 
-    \\textbf{{QA Automation Engineer}} \\hfill Jan 2021 -- Oct 2021\\\\
+    \\textbf{{Data QA (Co-op)}} \\hfill Jan 2020 -- Apr 2020\\\\
     Faisal Labs \\hfill \\textit{{Vancouver, BC}}
     \\begin{{itemize}}
         \\item BULLET 6

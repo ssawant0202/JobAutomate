@@ -14,11 +14,10 @@ Simon Fraser University (SFU)
 ================================================================
 SKILLS (baseline — AI will tailor to JD)
 ================================================================
-Technical Skills: Python, Pytest, Selenium, Playwright, Docker, GitHub Actions, JMeter, Postman, Bash, AWS RDS, SQL, Cypress
-Expertise: API Automation (REST), CI/CD Pipelines, DB Validation (SQL), E2E Testing, Shift-Left Testing, TestRail
-
+Technical Skills: Insert Generated Skills
+Expertise: Insert Generated Expertise
 ================================================================
-POOL A — NEW/MODE SOURCE BULLETS (Jan 2024 – Jan 2025)
+POOL A — NEW/MODE SOURCE BULLETS (Jan 2023 – Jan 2023)
 USE ONLY THESE FOR NEW/MODE. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
 ================================================================
 
@@ -40,7 +39,7 @@ USE ONLY THESE FOR NEW/MODE. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
   while documenting triage steps in Confluence — shortening release cycles by 30%
 
 ================================================================
-POOL B — FAISAL LABS SOURCE BULLETS (Jan 2021 – Oct 2021)
+POOL B — FAISAL LABS SOURCE BULLETS (Jan 2020 – Oct 2020)
 USE ONLY THESE FOR FAISAL LABS. DO NOT COPY VERBATIM. REWRITE EVERYTHING.
 ================================================================
 
@@ -78,10 +77,12 @@ AI-Powered Test Failure Triage
   insights directly to the issue tracker to accelerate debugging and reduce mean time to resolution.
 
 my_resume_keywords:
-Please paste the full job description so I can extract the role details, prioritize requirements, identify the top ATS keywords, and generate five tailored technical resume bullet points.
+- Built and trained **computer vision** models in **Python** to detect, classify, and interpret image/video data, improving model accuracy through dataset preprocessing, augmentation, evaluation, and iterative tuning.
 
-If available, also include:
-- Your current resume or relevant experience
-- Target job title
-- Tech stack you want emphasized
-- Any metrics/impact you want included
+- Developed end-to-end ML software pipelines from prototype to reliable production-ready implementation, writing clean, modular, well-documented code with unit tests, logging, error handling, and reproducible workflows.
+
+- Deployed **ML models** for practical inference performance, optimizing latency, memory usage, and reliability through model profiling, batching, serialization, and runtime validation.
+
+- Improved software reliability and model dependability by implementing automated testing, accuracy checks, performance benchmarks, and monitoring workflows to ensure consistent behavior beyond demo environments.
+
+- Built and optimized software for physical devices or constrained environments using **Python/C++**, integrating model inference with hardware-aware performance considerations such as compute limits, memory constraints, and real-time responsiveness.
