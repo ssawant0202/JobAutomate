@@ -2,7 +2,7 @@ def get_prompt(job_description: str, my_resume: str, important_words) -> str:
 
     prompt = f"""
 You are a senior SDET engineer and expert ATS resume writer. Your output will be a complete,
-compilable LaTeX resume file tailored to the job description below.
+compilable LaTeX resume file tailored to the job description below
  
 ============================================================
 STEP 1 — KEYWORD EXTRACTION (INTERNAL — DO THIS BEFORE WRITING ANYTHING)
