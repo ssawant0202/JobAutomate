@@ -26,8 +26,8 @@ def integrate_important_words_into_resume(job_description ):
     keyword_prompt = keywords_prompts.get_prompt(job_description)
 
     key_words_completion = client.chat.completions.create(
-        # model="gpt-4-turbo",
-        model="gpt-5.5",
+        model="gpt-4-turbo",
+        # model="gpt-5.5",
 
 
         messages=[
