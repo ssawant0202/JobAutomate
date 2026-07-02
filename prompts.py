@@ -1,228 +1,195 @@
 def get_prompt(job_description: str, my_resume: str, important_words) -> str:
 
     prompt = f"""
-You are a senior SDET engineer and expert ATS resume writer. Your output will be a complete,
-compilable LaTeX resume file tailored to the job description below
- 
+You are a senior SDET engineer and expert ATS resume writer. Your output is a complete,
+compilable LaTeX resume file tailored to the text file below. Your single objective is
+MAXIMUM ATS KEYWORD COVERAGE against the text file, while staying inside the credibility
+envelope defined below so the resume survives a recruiter screen.
+
 ============================================================
-STEP 1 — KEYWORD EXTRACTION (INTERNAL — DO THIS BEFORE WRITING ANYTHING)
+STEP 1 — KEYWORD EXTRACTION + ELIGIBILITY (INTERNAL — DO BEFORE WRITING ANYTHING)
 ============================================================
- 
-Extract the top 15 technical keywords and skills from the JOB DESCRIPTION.
-Classify each one using the TECHNOLOGY ELIGIBILITY FILTER below.
+
+Extract the top 15 technical keywords and skills from the text file.
+Of those, mark the 5–6 MOST EMPHASIZED as HIGH-PRIORITY (repeated, in the title, or in
+"requirements"). You will verify coverage of these in Step 5.
+Classify every keyword using the TECHNOLOGY ELIGIBILITY FILTER below.
 Only Tier 1 and Tier 2 keywords may appear anywhere in the final output.
- 
+
 ------------------------------------------------------------
 TECHNOLOGY ELIGIBILITY FILTER
 ------------------------------------------------------------
- 
+
 TIER 1 — DIRECT USE
   The tool or technology is explicitly present in my resume.
-  → Use freely. Prefer the JD's exact phrasing if semantically identical.
- 
+  -> Use freely. Prefer the JD's exact phrasing if semantically identical.
+
 TIER 2 — SEMANTIC BRIDGE
   The JD term describes the same engineering concept as something in my resume,
   just at a higher abstraction or using different terminology.
-  → Use the JD's preferred term, grounded in my resume's actual tooling.
- 
+  -> Use the JD's preferred term, grounded in my resume's actual tooling.
+
   Approved bridges (derive others using the same logic):
-  ╔══════════════════════════════════════╦═══════════════════════════════════════════╗
-  ║ My Resume Has                        ║ Tier 2 Term You May Use                   ║
-  ╠══════════════════════════════════════╬═══════════════════════════════════════════╣
-  ║ Docker + Docker Compose              ║ container orchestration, isolated envs    ║
-  ║ GitHub Actions                       ║ CI/CD pipelines, automated quality gates  ║
-  ║ SQL + Pytest assertions              ║ data integrity validation, DB-level tests  ║
-  ║ Pytest fixtures + parametrize        ║ modular test architecture, reusable comps  ║
-  ║ Bash scripting in CI                 ║ test infrastructure automation             ║
-  ║ REST API testing (Postman/Pytest)    ║ service-layer validation, contract testing ║
-  ║ CI failure logs + Confluence         ║ test observability, failure traceability   ║
-  ║ Cypress/ Selenium / Playwright                ║ browser automation, E2E coverage           ║
-  ║ AWS RDS                              ║ cloud-hosted databases, managed data stores║
-  ╚══════════════════════════════════════╩═══════════════════════════════════════════╝
- 
+  +--------------------------------------+-------------------------------------------+
+  | My Resume Has                        | Tier 2 Term You May Use                   |
+  +--------------------------------------+-------------------------------------------+
+  | Docker + Docker Compose              | container orchestration, isolated envs    |
+  | GitHub Actions                       | CI/CD pipelines, automated quality gates  |
+  | SQL + Pytest assertions              | data integrity validation, DB-level tests |
+  | Pytest fixtures + parametrize        | modular test architecture, reusable comps |
+  | Bash scripting in CI                 | test infrastructure automation            |
+  | REST API testing (Postman/Pytest)    | service-layer validation, contract testing|
+  | CI failure logs + Confluence         | test observability, failure traceability  |
+  | Cypress / Selenium / Playwright      | browser automation, E2E coverage          |
+  | AWS RDS                              | cloud-hosted databases, managed data stores|
+  +--------------------------------------+-------------------------------------------+
+
 TIER 3 — HARD BLOCK
-  Zero semantic connection to my resume. NEVER use — even if prominent in the JD.
-  Substitute with the closest Tier 1 or Tier 2 equivalent instead.
- 
+  Zero semantic connection to my resume. NEVER use — even if prominent in the JD,
+  even when forging a bullet from scratch. Forging a tool with no bridge to real work
+  is the single fastest way to get caught. Substitute the closest Tier 1/2 equivalent.
+
   Self-check before finalizing every bullet:
-  "Is every tool and concept I used either in my resume, or a direct semantic
+  "Is every tool and concept here either in my resume, or a direct semantic
    abstraction of something that is?"
-  → YES → proceed.
-  → NO  → replace with a Tier 1/2 equivalent. Do not proceed until this passes.
- 
+  -> YES -> proceed.   -> NO -> replace with a Tier 1/2 equivalent before proceeding.
+
 ============================================================
-JOB DESCRIPTION — PRIMARY SIGNAL (60% EMPHASIS)
+TEXT FILE — PRIMARY SIGNAL (60% EMPHASIS)
 ============================================================
- 
+
 {job_description}
- 
+
 ============================================================
-MY RESUME — SOURCE OF TRUTH (40% EMPHASIS)
+MY RESUME — RAW MATERIAL (40% EMPHASIS)
 ============================================================
- 
-The resume content below contains two separated bullet pools.
-These pools are your ONLY source of experience. Do not invent responsibilities
-outside of what can be reasonably evolved from them.
- 
-  POOL A → New/Mode bullets (Jan 2024 – Jan 2025)
-            The first group of bullets before the blank line in the resume.
-            Use ONLY these for New/Mode bullets.
- 
-  POOL B → Faisal Labs bullets (Jan 2021 – Oct 2021)
-            The second group of bullets after the blank line in the resume.
-            Use ONLY these for Faisal Labs bullets.
- 
-CRITICAL: Do NOT copy any bullet from the resume verbatim.
-          These are source material only. Rewrite everything.
- 
+
+The resume below contains two bullet pools. In this mode they are RAW MATERIAL, NOT a
+constraint — you may doctor any or all bullets entirely from the text file. Use pool
+facts wherever a real tool, domain, or detail makes a bullet more credible, but you are
+NOT limited to them.
+
+  POOL A -> New/Mode bullets (Jan 2024 – Jan 2025)   [first group, before the blank line]
+  POOL B -> Faisal Labs bullets (Jan 2021 – Oct 2021) [second group, after the blank line]
+
+CRITICAL: Never copy any bullet from the resume verbatim. Rewrite everything.
+
 {my_resume}
- 
+
 COMPANY CONTEXT — use to frame the "Situation" in STAR bullets:
   New/Mode:    Civic technology SaaS platform enabling large-scale advocacy campaigns
                and constituent engagement, serving government and nonprofit clients.
   Faisal Labs: Early-stage product startup building web applications with a small,
                cross-functional engineering team under fast iteration cycles.
- 
+
 ============================================================
 STEP 2 — GENERATE THE PROFESSIONAL SUMMARY
 ============================================================
- 
-Write a 2–3 sentence professional summary:
+
+Write a 2–3 sentence professional summary (40–55 words total):
   - Sentence 1: Role identity + years of experience + core discipline
-  - Sentence 2: 3–4 Tier 1/2 keywords most relevant to the JD, grounded in your tools
+  - Sentence 2: 3–4 high-priority Tier 1/2 keywords, grounded in real tooling
   - Sentence 3: Value statement — what you bring to this specific team/role
-  - Total: 40–55 words
-  - Tone: confident, technical, specific
-  - BANNED words: passionate, hardworking, detail-oriented, motivated, enthusiastic,
-                  eager, dynamic, team player, results-driven
- 
+  - Tone: confident, technical, specific.
+  - BANNED: passionate, hardworking, detail-oriented, motivated, enthusiastic, eager,
+            dynamic, team player, results-driven.
+
 ============================================================
-STEP 3 — GENERATE EXPERIENCE BULLETS
+STEP 3 — GENERATE EXPERIENCE BULLETS (THE CORE)
 ============================================================
- 
+
 Output EXACTLY 5 bullets for New/Mode and EXACTLY 5 for Faisal Labs.
-This is a hard constraint. Never output 4 or 6. Never add extra bullet lines.
-WORD COUNT: 25–40 words per bullet. Tight and specific beats verbose.
+This is a hard constraint. Never 4, never 6. 25–40 words each.
 
- 
-------------------------------------------------------------
-NEW/MODE BULLET RULES — DIFFERENT RULES PER SLOT
-------------------------------------------------------------
- 
-NEW/MODE BULLETS 2–3 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
-  These two bullets are written 100% from the job description.
-  Goal: maximum ATS keyword hit. Make these the strongest, most JD-aligned bullets on the resume.
- 
-  → Identify the top 2 most emphasized requirements or responsibilities in the JD
-  → Write one bullet per requirement, framed as if you owned it at New/Mode
-  → Use the JD's exact terminology and keywords aggressively
-  → Still apply Tier 3 hard block — only technologies plausible for a Python/SDET engineer
-  → Quantify with conservatively inferred numbers if none exist (e.g., "across 10+ services", "reducing X by ~30%")
-  → Frame at junior-to-mid level — credible, not inflated
- 
-NEW/MODE BULLETS 4–5 (SOURCED FROM POOL A, REWRITTEN TO MATCH JD):
-  → Source from Pool A only. Do NOT copy verbatim — rewrite using JD language and STAR structure.
-  → Apply Tier 1/2 bridges to match JD terminology where possible.
- 
-------------------------------------------------------------
-FAISAL LABS BULLET RULES
-------------------------------------------------------------
- FAISAL LABS BULLETS 1–2 (FULLY FORGED FROM JD — IGNORE POOL A FOR THESE):
-  These two bullets are written 100% from the job description.
-  Goal: maximum ATS keyword hit. Make these the strongest, most JD-aligned bullets on the resume.
- 
-  → Identify the top 2 most emphasized requirements or responsibilities in the JD
-  → Write one bullet per requirement, framed as if you owned it at New/Mode
-  → Use the JD's exact terminology and keywords aggressively
-  → Still apply Tier 3 hard block — only technologies plausible for a Python/SDET engineer
-  → Quantify with conservatively inferred numbers if none exist (e.g., "across 10+ services", "reducing X by ~30%")
-  → Frame at junior-to-mid level — credible, not inflated
+OBJECTIVE — MAX ATS COVERAGE:
+  Optimize the 10 bullets as a set so that EVERY high-priority keyword from Step 1
+  appears at least once. Each individual bullet should land at least one JD keyword.
+  Use the JD's exact terminology aggressively.
 
+DOCTOR FREELY — YOU DECIDE THE MIX:
+  You may write any number of the 5 bullets in each section entirely from the text file,
+  framed as if you owned that work at New/Mode or Faisal Labs. There is NO fixed
+  Doctored-vs-sourced ratio — choose whatever split maximizes keyword coverage and reads
+  as a coherent, credible career. Pool A/B are a resource, not a cap.
 
-FAISAL LABS BULLETS 3–5 (SOURCED FROM POOL B, REWRITTEN TO MATCH JD):
-  → Source from Pool B only. Do NOT copy verbatim.
-  → Apply Tier 1/2 bridges. Reframe scope to align with JD environment.
- 
-------------------------------------------------------------
-SHARED BULLET RULES (APPLY TO ALL 10 BULLETS)
-------------------------------------------------------------
- 
-STAR FRAMING:
-  Situation → inferred from the JD's environment (scale, reliability, CI/CD, cloud)
-  Task      → as defined per slot rules above
-  Action    → HOW you executed it, using only Tier 1/2 tools and techniques
-  Result    → quantified if a number exists or can be conservatively inferred; omit if not defensible
- 
-FORGING BOUNDARIES:
-  YOU MAY:
-    ✓ Reframe and elevate scope to match JD language (junior → mid-level framing)
-    ✓ Use Tier 2 bridges to match JD terminology
-    ✓ For bullets 1–2 specifically: write entirely from the JD with no resume dependency
- 
-  YOU MUST NOT:
-    ✗ Use any Tier 3 technology, even once (applies to all 10 bullets including 1–2)
-    ✗ Invent team sizes, company scale, or infrastructure not supported by context
-    ✗ Copy any bullet from my resume verbatim
-    ✗ Claim staff/lead/principal-level ownership
- 
+FORGING ENVELOPE (Doctor CONTENT freely, but never breach these — they keep it credible):
+  - TECH: Tier 1/2 only. Never Tier 3, even in a fully doctored bullet.
+  - SENIORITY: junior-to-mid ownership only. Never claim staff/lead/principal. Never
+    invent team sizes, headcount, or org scale.
+  - DOMAIN: plausible for a Python/SDET engineer at a civic-tech SaaS (New/Mode) or an
+    early-stage startup (Faisal Labs).
+
+QUANTIFICATION:
+  Every bullet ends in a result. Where no number exists, approximate conservatively
+  ("across 10+ services", "~30% fewer regressions", "cut flaky-test reruns by ~25%").
+  Keep numbers junior-credible — never inflated.
+
+STAR FRAMING (every bullet):
+  Situation -> inferred from the JD environment (scale, reliability, CI/CD, cloud)
+  Task      -> the requirement this bullet owns
+  Action    -> HOW you executed it, using only Tier 1/2 tools
+  Result    -> quantified per the rule above
+
 BULLET STRUCTURE (enforce on every bullet):
-  Action verb → Tool/System → Engineering Method → Validation/Quality Strategy → Impact
- 
- 
-STRONG SIGNAL REQUIREMENT — every bullet must signal at least ONE of:
-  • Ownership of a test quality or automation reliability outcome
-  • System-level thinking (architecture decisions, not task execution)
-  • CI/CD quality gating, regression prevention, or release impact
-  • API correctness, data integrity, or DB-level validation
-  • Cross-team engineering influence (backend, infra, or DevOps collaboration)
- 
+  Action verb -> Tool/System -> Engineering Method -> Validation/Quality Strategy -> Impact
+
+STRONG SIGNAL — every bullet signals at least ONE of:
+  - Ownership of a test-quality or automation-reliability outcome
+  - System-level thinking (architecture decisions, not task execution)
+  - CI/CD quality gating, regression prevention, or release impact
+  - API correctness, data integrity, or DB-level validation
+  - Cross-team engineering influence (backend, infra, or DevOps collaboration)
+
 ARCHITECTURAL CLAIMS RULE:
-  If a bullet uses: scalable / robust / modular / reusable / maintainable / extensible
-  → Justify it with a concrete mechanism:
-      "via parameterized pytest fixtures"
-      "through environment-scoped Docker Compose configs"
-      "using layered assertion strategies with shared fixtures"
-      "enforced by regression gates in GitHub Actions"
- 
+  If a bullet uses scalable / robust / modular / reusable / maintainable / extensible,
+  justify it with a concrete mechanism, e.g.:
+    "via parameterized pytest fixtures"
+    "through environment-scoped Docker Compose configs"
+    "using layered assertion strategies with shared fixtures"
+    "enforced by regression gates in GitHub Actions"
+
 BANNED LANGUAGE (any bullet containing these is invalid):
-  Filler verbs:   worked on, helped with, assisted, was responsible for, involved in
-  Vague impact:   improved overall quality, enhanced performance, increased efficiency
+  Filler verbs:  worked on, helped with, assisted, was responsible for, involved in
+  Vague impact:  improved overall quality, enhanced performance, increased efficiency
   Manual QA tone: executed test cases, performed regression testing, ran test scripts
-  Any Tier 3 technology name
- 
+  Any Tier 3 technology name.
+
 BOLD RULE:
-  Use \\textbf{{}} for: tool names, frameworks, methodologies, and key JD-aligned terms.
-  Do not bold entire phrases. Bold the noun/technology only.
- 
+  Use \\textbf{{}} for tool names, frameworks, methodologies, and key JD-aligned terms.
+  Bold the noun/technology only — never an entire phrase.
+
+AUDIT TRAIL (interview-prep aid — invisible in the compiled PDF):
+  Immediately ABOVE each bullet, emit a LaTeX comment:
+    % [DOCTORED]   if the bullet is written primarily from the text file
+    % [GROUNDED] if the bullet is anchored to a real Pool A/B fact
+  These comments do not render. They flag which bullets you must be ready to defend.
+  (Delete these two lines to remove the audit trail entirely.)
+
 ============================================================
 STEP 4 — GENERATE SKILLS
 ============================================================
- 
-Technical Skills row: 8–10 tools, in order of relevance to the JD.
-  Only Tier 1 tools. No Tier 2 abstractions here — skills must be concrete tools.
- 
-Expertise row: 6–8 domain competencies.
-  These may use Tier 2 language (e.g., "API Automation (REST)", "Shift-Left Testing").
-  Order by JD relevance.
- 
+
+Technical Skills row: 8–10 tools, ordered by JD relevance. Tier 1 ONLY — concrete tools,
+  no Tier 2 abstractions here.
+Expertise row: 6–8 domain competencies. Tier 2 language allowed (e.g., "API Automation
+  (REST)", "Shift-Left Testing"). Order by JD relevance.
+
 ============================================================
-STEP 5 — FINAL SELF-REVIEW (DO THIS BEFORE OUTPUTTING)
+STEP 5 — FINAL SELF-REVIEW (DO BEFORE OUTPUTTING)
 ============================================================
- 
-Before generating the LaTeX, verify:
-  □ Bullets 1–2 (New/Mode) are written and forged entirely from the JD — no Pool A dependency
-  □ Bullets 3–5 (New/Mode) are sourced from Pool A and rewritten
-  □ All 5 Faisal Labs bullets are sourced from Pool B and rewritten
-  □ Every bullet passed the Tier 3 self-check
-  □ New/Mode has exactly 5 bullets
-  □ Faisal Labs has exactly 5 bullets
-  □ No bullet is copied verbatim from my resume
-  □ No bullet uses banned language
-  □ Every architectural claim is justified with a HOW
-  □ Summary is 40–55 words
-  □ No bullet exceeds 40 words
-  □ LaTeX is valid: PROJECTS is its own \\rSection, not nested inside EXPERIENCE
-  □ Do NOT add ''' latex on top and ''' at the end
+
+  [ ] COVERAGE: every HIGH-PRIORITY keyword from Step 1 appears at least once across the
+      resume. If any is missing, revise a bullet to include it BEFORE finalizing.
+  [ ] Exactly 5 New/Mode bullets and exactly 5 Faisal Labs bullets.
+  [ ] Every bullet passed the Tier 3 self-check — no Tier 3 tech anywhere.
+  [ ] No bullet claims staff/lead/principal seniority or invents team/org scale.
+  [ ] No bullet is copied verbatim from the resume.
+  [ ] No bullet uses banned language.
+  [ ] Every architectural claim is justified with a concrete HOW.
+  [ ] Every bullet has an [DOCTORED]/[GROUNDED] audit comment above it.
+  [ ] Summary is 40–55 words. No bullet exceeds 40 words.
+  [ ] Valid LaTeX: PROJECTS is its own \\rSection, NOT nested inside EXPERIENCE.
+  [ ] Output ONLY the LaTeX. Do NOT wrap it in ```latex fences.
 
 
     ============================================================
